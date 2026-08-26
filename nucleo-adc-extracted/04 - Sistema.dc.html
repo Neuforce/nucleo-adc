@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+html,body{margin:0;background:#f7f7f5;font-family:"Geist",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#2f6bff;text-decoration:none}a:hover{color:#00244d}
+</style></helmet>
+<a href="00%20-%20Indice.dc.html" data-volver-indice="1" style="display:flex;align-items:center;gap:10px;padding:9px 56px;background:#0b1420;border-bottom:1px solid rgba(255,255,255,.09);font:600 11px 'Geist Mono',monospace;letter-spacing:.1em;color:#7f9cc0;text-transform:uppercase;text-decoration:none">← Índice de Núcleo ADC<span style="margin-left:auto;font:500 11px 'Geist Mono',monospace;letter-spacing:.06em;color:#55677f">DOC 4 · Sistema</span></a>
+
+<div style="max-width:1180px;margin:0 auto;background:#fff">
+
+  <div style="background:#00244d;padding:48px 56px 42px;display:flex;gap:34px;align-items:flex-start">
+    <div style="flex:1;min-width:0">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px"><img src="assets/nucleo-solido-white.svg" alt="" style="width:22px;height:22px;display:block"><div style="font:600 11px/1 'Geist Mono',monospace;letter-spacing:.2em;color:#a8c4e0;text-transform:uppercase">Sistema de diseño · el vocabulario común</div></div>
+      <h1 style="margin:0 0 16px;font:600 42px/1.05 'Geist',sans-serif;letter-spacing:-.035em;color:#fff">Los materiales con los que se construye cualquier app</h1>
+      <p style="margin:0;max-width:660px;font:300 15px/1.65 'Geist',sans-serif;color:#b9cee3;text-wrap:pretty">Color, tipografía, retícula y controles. No hay una segunda paleta ni una segunda escala: si algo no está aquí, no se usa. Las piezas grandes —tarjeta de indicador, formularios, shell— tienen su propio documento; esto es lo que todas comparten.</p>
+    </div>
+    <div style="flex:none;display:grid;grid-template-columns:repeat(2,138px);gap:10px">
+      <sc-for list="{{ cifras }}" as="c" hint-placeholder-count="4">
+        <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:11px 13px"><div style="font:600 20px/1 'Geist Mono',monospace;color:#fff">{{ c.v }}</div><div style="font:400 11px/1.35 'Geist',sans-serif;color:#a8c4e0;margin-top:5px">{{ c.q }}</div></div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="background:#fff;padding:44px 56px 48px">
+    <div style="font:600 11px/1 'Geist Mono',monospace;letter-spacing:.14em;color:#6b7482;text-transform:uppercase;margin-bottom:8px">01 · Color</div>
+    <h2 style="margin:0 0 8px;font:600 27px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#0e1116">Navy para la estructura, un solo azul para actuar, tres para el estado</h2>
+    <p style="margin:0 0 24px;max-width:840px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">El navy no decora: marca dónde estás —rail, menú de pantallas, encabezados de sección—. El azul de acción aparece <b>una vez por pantalla</b>. Y verde, ámbar y rojo <b>solo</b> significan estado de un indicador; nunca se usan para adornar.</p>
+
+    <sc-for list="{{ familias }}" as="f" hint-placeholder-count="4">
+      <div style="margin-bottom:14px">
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px">
+          <div style="font:600 12.5px 'Geist',sans-serif;color:#0e1116">{{ f.t }}</div>
+          <div style="font:400 12px 'Geist',sans-serif;color:#6b7482">{{ f.q }}</div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px">
+          <sc-for list="{{ f.tonos }}" as="c" hint-placeholder-count="6">
+            <div style="border:1px solid #e4e6ea;border-radius:6px;overflow:hidden">
+              <div style="height:52px;background:{{ c.hex }};border-bottom:1px solid #e4e6ea"></div>
+              <div style="padding:8px 10px 9px">
+                <div style="font:600 11.5px 'Geist',sans-serif;color:#0e1116;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ c.n }}</div>
+                <div style="font:500 10.5px 'Geist Mono',monospace;color:#6b7482;margin-top:2px">{{ c.hex }}</div>
+                <div style="font:400 10.5px/1.4 'Geist',sans-serif;color:#98a0ac;margin-top:4px">{{ c.uso }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #e4e6ea;border-radius:8px;overflow:hidden;margin-top:18px">
+      <div style="padding:15px 18px;border-right:1px solid #f1f3f6"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">Un elemento oscuro por zona</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">El navy sólido señala lo que gobierna: la app activa en el rail, la tarjeta que manda en la fila, el botón primario. Máximo dos tarjetas navy por fila —si todas destacan, ninguna lo hace.</div></div>
+      <div style="padding:15px 18px;border-right:1px solid #f1f3f6"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">El color de estado se calcula</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Verde ≥100 % de la meta, ámbar 80–99, rojo &lt;80. Nadie elige el color a mano; sale del dato. Sobre texto, el ámbar baja a <code style="font:500 11px 'Geist Mono',monospace">#8A5A12</code> para alcanzar contraste.</div></div>
+      <div style="padding:15px 18px"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">Oscuro no es invertir</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Los estados suben de luminosidad y las superficies se aclaran por capas —mesa, tarjeta, elevada—. Nunca navy sólido sobre fondo oscuro: pierde jerarquía.</div></div>
+    </div>
+  </div>
+
+  <div style="background:#f7f7f5;padding:44px 56px 48px">
+    <div style="font:600 11px/1 'Geist Mono',monospace;letter-spacing:.14em;color:#6b7482;text-transform:uppercase;margin-bottom:8px">02 · Tipografía</div>
+    <h2 style="margin:0 0 8px;font:600 27px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#0e1116">Geist para leer, Geist Mono para comparar</h2>
+    <p style="margin:0 0 24px;max-width:840px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">Dos familias y ninguna más. <b>Todo número va en mono con cifras tabulares</b>: importes, porcentajes, fechas, folios. Es lo que permite comparar una columna de un vistazo en vez de leerla dígito a dígito.</p>
+
+    <div style="border:1px solid #e4e6ea;border-radius:8px;overflow:hidden;background:#fff">
+      <sc-for list="{{ escala }}" as="e" hint-placeholder-count="8">
+        <div style="display:grid;grid-template-columns:150px minmax(0,1fr) 190px;gap:18px;align-items:baseline;padding:13px 18px;border-bottom:1px solid #f1f3f6">
+          <div style="font:600 11.5px 'Geist Mono',monospace;color:#0e1116">{{ e.n }}</div>
+          <div style="min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font:{{ e.css }};color:#0e1116">{{ e.muestra }}</div>
+          <div style="font:400 11.5px/1.5 'Geist',sans-serif;color:#6b7482">{{ e.uso }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #e4e6ea;border-radius:8px;overflow:hidden;background:#fff;margin-top:16px">
+      <div style="padding:15px 18px;border-right:1px solid #f1f3f6"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">Cuatro niveles de voz</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Cifra · nombre · estado · referencia. Si una pantalla necesita un quinto, sobra información, no falta tamaño.</div></div>
+      <div style="padding:15px 18px;border-right:1px solid #f1f3f6"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">Los rótulos van en mono</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">11 px, peso 600, <code style="font:500 11px 'Geist Mono',monospace">letter-spacing .09em</code>, mayúsculas y gris. Se consultan, no se leen.</div></div>
+      <div style="padding:15px 18px;border-right:1px solid #f1f3f6"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">Nunca bajo 11</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Es el piso del sistema, y solo para rótulos mono. El cuerpo mínimo es 11.5 y el de lectura larga, 14/1.65.</div></div>
+      <div style="padding:15px 18px"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">Dinero abreviado</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">En tarjetas y tableros: <b>$25.5M</b>, un decimal, misma unidad que la meta. El importe exacto vive en el panel y en la tabla.</div></div>
+    </div>
+  </div>
+
+  <div style="background:#fff;padding:44px 56px 48px">
+    <div style="font:600 11px/1 'Geist Mono',monospace;letter-spacing:.14em;color:#6b7482;text-transform:uppercase;margin-bottom:8px">03 · Retícula y medidas</div>
+    <h2 style="margin:0 0 8px;font:600 27px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#0e1116">Todo es múltiplo de cuatro, y las zonas ya están fijadas</h2>
+    <p style="margin:0 0 24px;max-width:840px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">Los anchos del shell no se negocian por pantalla —se documentan en <a href="05%20-%20Shell%20y%20estados.dc.html">Doc 5</a>—. Aquí van las medidas que se repiten dentro de la mesa.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px">
+      <sc-for list="{{ medidas }}" as="m" hint-placeholder-count="8">
+        <div style="border:1px solid #e4e6ea;border-radius:8px;padding:15px 17px">
+          <div style="font:600 21px/1 'Geist Mono',monospace;letter-spacing:-.02em;color:#00244d">{{ m.v }}</div>
+          <div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-top:7px">{{ m.t }}</div>
+          <div style="font:400 11.5px/1.55 'Geist',sans-serif;color:#5b6472;margin-top:4px">{{ m.q }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="border:1px solid #e4e6ea;border-radius:8px;overflow:hidden">
+      <div style="padding:13px 18px;border-bottom:1px solid #e4e6ea;background:#fbfbfc;display:flex;align-items:baseline;gap:10px"><div style="font:600 12.5px 'Geist',sans-serif;color:#0e1116">Radios y bordes</div><div style="font:400 11.5px 'Geist',sans-serif;color:#6b7482">cuatro valores, y ninguno más</div></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr)">
+        <div style="padding:15px 18px;border-right:1px solid #f1f3f6"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">Radio 6 · superficies</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Tarjetas, tablas, paneles. Borde de 1 px <code style="font:500 11px 'Geist Mono',monospace">#E4E6EA</code>; nunca sombra para separar dos superficies vecinas.</div></div>
+        <div style="padding:15px 18px;border-right:1px solid #f1f3f6"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">Radio 5–6 · controles</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Botones, campos, chips y celdas del menú: 5 en formularios densos, 6 en el encabezado y el menú. Las <b>cápsulas del rail</b> suben a 7–9 —son las únicas— y las teclas de atajo bajan a 3.</div></div>
+        <div style="padding:15px 18px"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">Sombra solo para lo que se posa</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Menú abierto, Núcleo, paleta ⌘K, menús de la ruta. Lo que forma parte del ancho lleva borde, no sombra.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#f7f7f5;padding:44px 56px 48px">
+    <div style="font:600 11px/1 'Geist Mono',monospace;letter-spacing:.14em;color:#6b7482;text-transform:uppercase;margin-bottom:8px">04 · Controles</div>
+    <h2 style="margin:0 0 8px;font:600 27px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#0e1116">Altura 30 en escritorio, 44 donde se toca</h2>
+    <p style="margin:0 0 24px;max-width:840px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">Un primario por pantalla, en navy. Todo lo demás es contorno o texto: si hay dos botones azules compitiendo, uno de los dos no era la acción principal.</p>
+
+    <div style="border:1px solid #e4e6ea;border-radius:8px;background:#fff;padding:22px;margin-bottom:16px">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px">
+        <div style="display:flex;align-items:center;height:30px;padding:0 14px;border-radius:5px;background:#00244d;color:#fff;font:600 12px 'Geist',sans-serif">Guardar cambios</div>
+        <div style="display:flex;align-items:center;height:30px;padding:0 13px;border-radius:5px;border:1px solid #d8dce2;background:#fff;color:#0e1116;font:600 12px 'Geist',sans-serif">Descartar</div>
+        <div style="display:flex;align-items:center;height:30px;padding:0 10px;border-radius:5px;color:#2f6bff;font:600 12px 'Geist',sans-serif">Ver fuentes</div>
+        <div style="display:flex;align-items:center;height:30px;padding:0 13px;border-radius:5px;border:1px solid #e8c9c6;background:#fdf6f5;color:#C2352B;font:600 12px 'Geist',sans-serif">Cancelar póliza</div>
+        <div style="width:1px;height:22px;background:#e4e6ea"></div>
+        <div style="display:flex;align-items:center;gap:8px;height:30px;padding:0 10px;border:1px solid #e4e6ea;border-radius:5px;color:#98a0ac;font:400 12px 'Geist',sans-serif;width:190px">Buscar<span style="margin-left:auto;font:500 11px 'Geist Mono',monospace;border:1px solid #e4e6ea;border-radius:3px;padding:1px 4px;color:#6b7482">⌘K</span></div>
+        <div style="display:flex;align-items:center;height:30px;padding:0 11px;border:1px solid #d8dce2;border-radius:5px;font:500 12px 'Geist Mono',monospace;color:#0e1116">AGO 2026</div>
+        <div style="display:flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:13px;border:1px solid #cfe8de;background:#f4faf7;font:600 11px 'Geist Mono',monospace;color:#0B7A53"><span style="width:6px;height:6px;border-radius:50%;background:#0B7A53"></span>DATOS AL 27 AGO</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+        <div>
+          <div style="font:600 11px 'Geist Mono',monospace;letter-spacing:.07em;color:#6b7482;margin-bottom:7px">CAMPO EN REPOSO</div>
+          <div style="height:34px;border:1px solid #d8dce2;border-radius:5px;display:flex;align-items:center;padding:0 11px;font:400 12.5px 'Geist',sans-serif;color:#0e1116">Jorge Ramírez Salas</div>
+        </div>
+        <div>
+          <div style="font:600 11px 'Geist Mono',monospace;letter-spacing:.07em;color:#6b7482;margin-bottom:7px">CON FOCO</div>
+          <div style="height:34px;border:1px solid #2f6bff;border-radius:5px;box-shadow:0 0 0 3px rgba(47,107,255,.14);display:flex;align-items:center;padding:0 11px;font:400 12.5px 'Geist',sans-serif;color:#0e1116">18,420,000</div>
+        </div>
+        <div>
+          <div style="font:600 11px 'Geist Mono',monospace;letter-spacing:.07em;color:#6b7482;margin-bottom:7px">CON ERROR</div>
+          <div style="height:34px;border:1px solid #C2352B;border-radius:5px;display:flex;align-items:center;padding:0 11px;font:400 12.5px 'Geist',sans-serif;color:#0e1116">—</div>
+          <div style="font:400 11px 'Geist',sans-serif;color:#C2352B;margin-top:5px">Falta la meta del periodo</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #e4e6ea;border-radius:8px;overflow:hidden;background:#fff">
+      <div style="padding:15px 18px;border-right:1px solid #f1f3f6"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">Cero modales para trabajar</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Los modales solo confirman destrucción. Todo lo demás es panel que se posa o pantalla propia.</div></div>
+      <div style="padding:15px 18px;border-right:1px solid #f1f3f6"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">44 px donde se toca</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Por debajo de 1,279 px todo objetivo táctil sube a 44, sin excepción.</div></div>
+      <div style="padding:15px 18px;border-right:1px solid #f1f3f6"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">El foco siempre se ve</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Anillo azul de 3 px al 14 %. Nunca se quita: media plantilla trabaja con teclado.</div></div>
+      <div style="padding:15px 18px"><div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:5px">Peligro es contorno</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Rojo relleno solo dentro del modal de confirmación; en la mesa va como contorno.</div></div>
+    </div>
+  </div>
+
+  <div style="background:#0b1420;padding:44px 56px 50px">
+    <div style="font:600 11px/1 'Geist Mono',monospace;letter-spacing:.14em;color:#8b98a8;text-transform:uppercase;margin-bottom:8px">05 · Reglas para una app nueva</div>
+    <h2 style="margin:0 0 24px;font:600 27px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#fff">Nueve reglas, y la app número doce se diseña sola</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 34px">
+      <sc-for list="{{ reglas }}" as="r" hint-placeholder-count="9">
+        <div style="display:flex;gap:13px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1)">
+          <span style="flex:none;font:600 11px 'Geist Mono',monospace;color:#7f9cc0;padding-top:3px">{{ r.n }}</span>
+          <span style="font:400 12.5px/1.6 'Geist',sans-serif;color:#c9d8e8;text-wrap:pretty">{{ r.t }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#00244d"/><rect x="30" y="34" width="24" height="24" rx="4" fill="#fff"/><rect x="60" y="34" width="24" height="24" rx="4" fill="#7f9cc0"/><rect x="30" y="64" width="24" height="24" rx="4" fill="#2f6bff"/><rect x="60" y="64" width="24" height="24" rx="4" fill="#a8c4e0"/></svg></template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:1500}}">
+class Component extends DCLogic {
+  renderVals(){
+    return {
+      cifras:[
+        {v:'2',q:'familias: Geist y Geist Mono'},
+        {v:'4',q:'de base; todo es múltiplo'},
+        {v:'1',q:'primario por pantalla'},
+        {v:'3',q:'colores de estado, calculados'}
+      ],
+      familias:[
+        {t:'Estructura', q:'navy: dónde estoy y qué gobierna', tonos:[
+          {n:'Navy',hex:'#00244D',uso:'Rail, primario, activo'},
+          {n:'Navy profundo',hex:'#0B1420',uso:'Fondo de sección oscura'},
+          {n:'Rail oscuro',hex:'#0D1826',uso:'Rail en tema oscuro'},
+          {n:'Azul medio',hex:'#7F9CC0',uso:'Íconos del rail en reposo'},
+          {n:'Azul claro',hex:'#A8C4E0',uso:'Texto sobre navy'},
+          {n:'Selección',hex:'#EEF2FB',uso:'Fila y pantalla activa'}
+        ]},
+        {t:'Tintas y superficies', q:'la mesa y lo que se apoya en ella', tonos:[
+          {n:'Tinta',hex:'#0E1116',uso:'Títulos y cifras'},
+          {n:'Tinta suave',hex:'#3D4551',uso:'Cuerpo y listas'},
+          {n:'Gris',hex:'#6B7482',uso:'Secundario y rótulos'},
+          {n:'Mesa',hex:'#F4F5F7',uso:'Fondo de trabajo'},
+          {n:'Borde',hex:'#E4E6EA',uso:'Superficies'},
+          {n:'Línea',hex:'#EEF0F3',uso:'Divisiones internas'}
+        ]},
+        {t:'Estado y acción', q:'verde, ámbar y rojo solo significan cumplimiento', tonos:[
+          {n:'Cumple',hex:'#0B7A53',uso:'≥100 % de la meta'},
+          {n:'En riesgo',hex:'#B7791F',uso:'80–99 %'},
+          {n:'Fuera',hex:'#C2352B',uso:'Menos de 80 %'},
+          {n:'Ámbar texto',hex:'#8A5A12',uso:'El ámbar sobre blanco'},
+          {n:'Acción',hex:'#2F6BFF',uso:'Enlaces y foco'},
+          {n:'Acción tenue',hex:'#F7F8FF',uso:'Fondo de Núcleo'}
+        ]},
+        {t:'Tema oscuro', q:'superficies por capas y estados más luminosos', tonos:[
+          {n:'Mesa oscura',hex:'#070F18',uso:'Fondo de trabajo'},
+          {n:'Superficie',hex:'#101C2B',uso:'Tarjetas y encabezado'},
+          {n:'Elevada',hex:'#16253A',uso:'Tarjeta destacada'},
+          {n:'Cumple',hex:'#2FBE86',uso:'≥100 %'},
+          {n:'En riesgo',hex:'#E0A640',uso:'80–99 %'},
+          {n:'Fuera',hex:'#FF8B80',uso:'Menos de 80 %'}
+        ]}
+      ],
+      escala:[
+        {n:'Título de doc',css:"600 30px/1.1 'Geist',sans-serif",muestra:'Estado de resultados',uso:'Portadas y encabezados de documento'},
+        {n:'Título de sección',css:"600 22px/1.15 'Geist',sans-serif",muestra:'Cómo va el mes contra la meta',uso:'H2 de una sección'},
+        {n:'Título de pantalla',css:"600 21px/1.15 'Geist',sans-serif",muestra:'Jorge Ramírez · Gerente de sucursal',uso:'Lo primero de la mesa'},
+        {n:'Cifra',css:"600 27px/1.25 'Geist Mono',monospace",muestra:'483 · $25.5M · 14.6%',uso:'El dato de la tarjeta; importes a 24'},
+        {n:'Cuerpo',css:"400 14px/1.65 'Geist',sans-serif",muestra:'Nombre, cifra y meta comparten una línea base.',uso:'Lectura larga'},
+        {n:'Secundario',css:"400 12.5px/1.6 'Geist',sans-serif",muestra:'Se recorre como un renglón, no como una cuadrícula.',uso:'Notas y celdas de tabla'},
+        {n:'Nombre de pieza',css:"600 14.5px/1.25 'Geist',sans-serif",muestra:'Tráfico Walk-In',uso:'Nombre del indicador en su tarjeta'},
+        {n:'Rótulo mono',css:"600 11px 'Geist Mono',monospace",muestra:'MG CELAYA · AGO 2026',uso:'Referencias: se consultan, no se leen'}
+      ],
+      medidas:[
+        {v:'4 px',t:'La base',q:'Todo espacio y todo tamaño es múltiplo de cuatro.'},
+        {v:'30 px',t:'Alto de control',q:'Botones, campos y filtros del encabezado en escritorio.'},
+        {v:'44 px',t:'Objetivo táctil',q:'Mínimo por debajo de 1,279 px de ancho.'},
+        {v:'14 px',t:'Separación de tarjetas',q:'El hueco de la rejilla de indicadores.'},
+        {v:'20 px',t:'Aire de la mesa',q:'Margen interior entre el shell y el contenido.'},
+        {v:'52 px',t:'Encabezado',q:'Una sola línea: ☰, app, ruta, periodo, ⌘K, Núcleo.'},
+        {v:'196 px',t:'Ancho mínimo de tarjeta',q:'Debajo, el nombre se corta y la meta desaparece.'},
+        {v:'340 · 460',t:'Paneles que se posan',q:'Núcleo mide 340; el detalle del indicador, 460 (Doc 8 §06). Ambos con sombra.'}
+      ],
+      reglas:[
+        {n:'01',t:'El shell no se toca: rail de apps, menú de pantallas y mesa. Una app no inventa navegación propia.'},
+        {n:'02',t:'Toda pantalla empieza por el dato, no por los filtros. El primer objeto que se ve es una cifra con su meta.'},
+        {n:'03',t:'Un primario por pantalla. Si hay dos acciones azules, una no era la principal.'},
+        {n:'04',t:'Números en mono tabular, siempre. Dinero abreviado en tarjetas, exacto en tabla y panel.'},
+        {n:'05',t:'El color de estado sale del cumplimiento. Nunca se elige a mano ni se usa para decorar.'},
+        {n:'06',t:'Nada de modales para trabajar: paneles que se posan o pantallas propias.'},
+        {n:'07',t:'Los seis estados —cargando, vacío, sin permiso, error, sin red, parcial— se resuelven en la mesa, con el shell intacto.'},
+        {n:'08',t:'Toda cifra abre el mismo panel de detalle: qué cuenta, trayectoria, desglose y lectura de Núcleo.'},
+        {n:'09',t:'Núcleo se invoca, no se reserva: vive en el encabezado y llega con el objeto que estabas viendo.'}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

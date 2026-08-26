@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+body{margin:0;background:#eceae6;font-family:"Geist",system-ui,sans-serif}
+a{color:#2f6bff;text-decoration:none}a:hover{color:#00244d}
+</style></helmet>
+<a href="00%20-%20Indice.dc.html" data-volver-indice="1" style="display:flex;align-items:center;gap:10px;padding:9px 56px;background:#0b1420;border-bottom:1px solid rgba(255,255,255,.09);font:600 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.1em;color:#7f9cc0;text-transform:uppercase;text-decoration:none">← Índice de Núcleo ADC<span style="margin-left:auto;font:500 11px 'Geist Mono',ui-monospace,monospace;letter-spacing:.06em;color:#55677f">DOC 2 · Concepto de interfaz</span></a>
+
+
+<div style="width:1280px;margin:0 auto;padding:0 0 80px;display:flex;flex-direction:column;gap:2px">
+
+<div style="background:#00244d;padding:60px 60px 54px;display:flex;align-items:flex-end;gap:40px">
+  <div style="flex:1">
+    <div style="font:600 10.5px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.22em;color:#6ba3d8;text-transform:uppercase;margin-bottom:22px">Concepto de interfaz · antes de diseñar pantallas</div>
+    <h1 style="margin:0 0 18px;font:600 46px/1.05 'Geist',sans-serif;letter-spacing:-.035em;color:#fff">La app no es un sitio.<br>Es una mesa de trabajo.</h1>
+    <p style="margin:0;max-width:620px;font:300 15.5px/1.65 'Geist',sans-serif;color:#b9cee3;text-wrap:pretty">Lo que tienen en común tus cinco referencias, lo que de eso sirve para apps donde la gente pasa <b style="color:#fff;font-weight:500">ocho horas</b> con tablas y cifras, y las reglas que salen de ahí.</p>
+  </div>
+  <div style="flex:none;display:flex;gap:10px;align-items:flex-end">
+    <div style="width:26px;height:132px;border-radius:6px;background:rgba(255,255,255,.22)"></div>
+    <div style="width:150px;height:132px;border-radius:6px;background:rgba(255,255,255,.1);display:flex;flex-direction:column;gap:6px;padding:8px"><div style="height:14px;border-radius:3px;background:rgba(255,255,255,.18)"></div><div style="flex:1;border-radius:3px;background:rgba(255,255,255,.14)"></div></div>
+    <div style="width:52px;height:132px;border-radius:6px;background:linear-gradient(160deg,#3ED0EA,#2F6BFF)"></div>
+  </div>
+</div>
+
+<div style="background:#fff;padding:44px 60px 48px">
+  <div style="font:600 10px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.14em;color:#98a0ac;text-transform:uppercase;margin-bottom:8px">01 · Lo común</div>
+  <h2 style="margin:0 0 8px;font:600 27px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#0e1116">Ocho decisiones que las cinco repiten</h2>
+  <p style="margin:0 0 30px;max-width:680px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">Ninguna es un estilo: todas son decisiones de estructura. Por eso se pueden adoptar sin copiar la estética.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #e4e6ea;border-radius:8px;overflow:hidden">
+    <div style="padding:20px;border-right:1px solid #e4e6ea;border-bottom:1px solid #e4e6ea">
+      <div style="height:78px;border-radius:6px;background:#f4f5f7;display:flex;gap:5px;padding:7px;margin-bottom:14px">
+        <div style="width:14px;border-radius:4px;background:#00244d;display:flex;flex-direction:column;gap:4px;padding:4px 0;align-items:center"><div style="width:6px;height:6px;border-radius:2px;background:#fff"></div><div style="width:6px;height:6px;border-radius:2px;background:rgba(255,255,255,.45)"></div><div style="width:6px;height:6px;border-radius:2px;background:rgba(255,255,255,.45)"></div></div>
+        <div style="flex:1;border-radius:4px;background:#fff"></div>
+      </div>
+      <div style="font:600 12.5px/1.3 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">Rail de íconos, no sidebar</div>
+      <div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">48–64 px con glifos y tooltip. La navegación deja de competir por el ancho: se recuperan ~190 px de mesa.</div>
+    </div>
+    <div style="padding:20px;border-right:1px solid #e4e6ea;border-bottom:1px solid #e4e6ea">
+      <div style="height:78px;border-radius:6px;background:#e9eaee;padding:9px;margin-bottom:14px"><div style="height:100%;border-radius:8px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.06)"></div></div>
+      <div style="font:600 12.5px/1.3 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">Lienzo sobre escritorio</div>
+      <div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Fondo neutro tenue y una superficie blanca con esquinas redondeadas. Se siente herramienta, no página web.</div>
+    </div>
+    <div style="padding:20px;border-right:1px solid #e4e6ea;border-bottom:1px solid #e4e6ea">
+      <div style="height:78px;border-radius:6px;background:#f4f5f7;padding:9px;margin-bottom:14px;display:flex;flex-direction:column;gap:7px"><div style="height:20px;border-radius:10px;background:#0e1116;display:flex;align-items:center;gap:5px;padding:0 7px"><div style="width:8px;height:8px;border-radius:50%;background:#fff"></div><div style="width:32px;height:4px;border-radius:2px;background:rgba(255,255,255,.6)"></div><div style="margin-left:auto;width:14px;height:8px;border-radius:4px;background:#2fbe86"></div></div><div style="flex:1;border-radius:4px;background:#fff"></div></div>
+      <div style="font:600 12.5px/1.3 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">El día vive en el encabezado</div>
+      <div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Una sola línea con la agenda, los pendientes y quién participa. Nada de menú superior de segundo nivel.</div>
+    </div>
+    <div style="padding:20px;border-bottom:1px solid #e4e6ea">
+      <div style="height:78px;border-radius:6px;background:#f4f5f7;padding:9px;margin-bottom:14px;display:flex;gap:7px"><div style="flex:1;border-radius:5px;background:#fff"></div><div style="width:34px;border-radius:5px;background:#0e1116;display:flex;flex-direction:column;gap:4px;padding:5px"><div style="height:5px;border-radius:2px;background:rgba(255,255,255,.5)"></div><div style="height:5px;border-radius:2px;background:rgba(255,255,255,.3)"></div><div style="height:12px;border-radius:3px;background:#2F6BFF;margin-top:auto"></div></div></div>
+      <div style="font:600 12.5px/1.3 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">Panel flotante para lo asistido</div>
+      <div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Llamada, resumen, Núcleo: superficies que se posan sobre el trabajo y se van. Nunca una pantalla aparte.</div>
+    </div>
+    <div style="padding:20px;border-right:1px solid #e4e6ea;border-bottom:1px solid #e4e6ea">
+      <div style="height:78px;border-radius:6px;background:#f4f5f7;padding:9px;margin-bottom:14px;display:flex;flex-direction:column;justify-content:center;gap:6px"><div style="font:600 26px/1 'Geist Mono',monospace;color:#0e1116;letter-spacing:-.03em">10.4</div><div style="display:flex;align-items:flex-end;gap:3px;height:16px"><div style="width:7px;height:50%;background:#c8ced7;border-radius:1px"></div><div style="width:7px;height:75%;background:#c8ced7;border-radius:1px"></div><div style="width:7px;height:100%;background:#00244d;border-radius:1px"></div></div></div>
+      <div style="font:600 12.5px/1.3 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">Cifra grande + micrográfico</div>
+      <div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">El número manda y el gráfico solo lo acompaña. Cero gráficas decorativas de página completa.</div>
+    </div>
+    <div style="padding:20px;border-right:1px solid #e4e6ea;border-bottom:1px solid #e4e6ea">
+      <div style="height:78px;border-radius:6px;background:#f4f5f7;padding:9px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px"><div style="padding:6px 12px;border-radius:12px;background:#0e1116;font:600 9.5px 'Geist',sans-serif;color:#fff">Activo</div><div style="padding:6px 12px;border-radius:12px;background:#fff;font:500 9.5px 'Geist',sans-serif;color:#98a0ac">Otro</div></div>
+      <div style="font:600 12.5px/1.3 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">Píldora oscura = aquí estás</div>
+      <div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Un solo elemento de alto contraste por zona marca el estado activo y la acción principal. El resto, contorno.</div>
+    </div>
+    <div style="padding:20px;border-right:1px solid #e4e6ea;border-bottom:1px solid #e4e6ea">
+      <div style="height:78px;border-radius:6px;background:#f4f5f7;padding:9px;margin-bottom:14px;display:flex;align-items:center;gap:-6px"><div style="width:22px;height:22px;border-radius:50%;background:#c8ced7;border:2px solid #fff"></div><div style="width:22px;height:22px;border-radius:50%;background:#a8b4c4;border:2px solid #fff;margin-left:-7px"></div><div style="width:22px;height:22px;border-radius:50%;background:#8a99ad;border:2px solid #fff;margin-left:-7px"></div><div style="width:22px;height:22px;border-radius:50%;background:#00244d;border:2px solid #fff;margin-left:-7px;display:grid;place-items:center;font:600 8px 'Geist Mono',monospace;color:#fff">+4</div></div>
+      <div style="font:600 12.5px/1.3 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">El trabajo tiene cara</div>
+      <div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Cada pendiente muestra a quién le toca. Convierte una lista en una responsabilidad.</div>
+    </div>
+    <div style="padding:20px;border-bottom:1px solid #e4e6ea">
+      <div style="height:78px;border-radius:6px;background:#f4f5f7;padding:9px;margin-bottom:14px;display:flex;align-items:center;gap:6px"><div style="flex:1;height:26px;border-radius:5px;background:#fff"></div><div style="width:14px;height:2px;background:#c8ced7"></div><div style="flex:1;height:26px;border-radius:5px;background:#fff"></div><div style="width:14px;height:2px;background:#c8ced7"></div><div style="flex:1;height:26px;border-radius:5px;background:#00244d"></div></div>
+      <div style="font:600 12.5px/1.3 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">El proceso se dibuja</div>
+      <div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Etapas conectadas en lugar de estados en una columna. Se entiende dónde está algo sin leer.</div>
+    </div>
+    <div style="grid-column:span 4;padding:18px 20px;background:#fbfbfc;display:flex;gap:30px;flex-wrap:wrap">
+      <div style="font:600 11.5px 'Geist',sans-serif;color:#0e1116">Y en las cinco, lo que NO hay:</div>
+      <div style="flex:1;min-width:420px;font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">menús de tres niveles · bordes duros entre secciones · más de un color saturado por pantalla · tablas con líneas de cuadrícula completas · botones con relleno de color en cada tarjeta · texto en mayúsculas largo · íconos rellenos.</div>
+    </div>
+  </div>
+</div>
+
+<div style="background:#fff;padding:44px 60px 48px">
+  <div style="font:600 10px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.14em;color:#98a0ac;text-transform:uppercase;margin-bottom:8px">02 · Traducción</div>
+  <h2 style="margin:0 0 8px;font:600 27px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#0e1116">Qué adoptamos y qué no cabe en una jornada de ocho horas</h2>
+  <p style="margin:0 0 30px;max-width:700px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">Todas tus referencias son tableros ligeros: pocas filas, mucho aire, una visita corta. Núcleo es lo contrario — un contralor abre el estado de resultados a las 8:00 y lo cierra a las 18:00. El aire que se ve bien en una captura se paga en scroll cuando hay 400 renglones. Ahí está la única tensión real, y se resuelve separando <b>resumen</b> de <b>mesa</b>.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div style="border:1px solid #cfe8de;border-radius:8px;overflow:hidden">
+      <div style="padding:12px 18px;background:#f4faf7;border-bottom:1px solid #cfe8de;font:600 10.5px 'Geist Mono',monospace;letter-spacing:.06em;color:#0E8A5F">SE ADOPTA</div>
+      <div style="padding:6px 0">
+        <div style="padding:12px 18px;border-bottom:1px solid #f1f5f3;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Rail de íconos de 56 px</b> con tooltip al pasar el cursor; abrir una app siempre pide clic. Es la ganancia más grande de ancho, gratis.</div>
+        <div style="padding:12px 18px;border-bottom:1px solid #f1f5f3;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Encabezado de una línea</b> con periodo, sellos de datos y pendientes del día. 52 px, siempre visible.</div>
+        <div style="padding:12px 18px;border-bottom:1px solid #f1f5f3;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Núcleo como panel que se invoca</b>, no como columna permanente: se abre desde un botón del encabezado, a la derecha y sobre el objeto que consultas, y se cierra al terminar. Se posa, nunca empuja, y nunca ocupa el lugar del trabajo.</div>
+        <div style="padding:12px 18px;border-bottom:1px solid #f1f5f3;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Un elemento oscuro por zona</b> para el estado activo y la acción principal.</div>
+        <div style="padding:12px 18px;border-bottom:1px solid #f1f5f3;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Cifra grande con micrográfico</b> y la meta al lado — ya es la gramática del indicador.</div>
+        <div style="padding:12px 18px;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Avatar de responsable</b> en pendientes, autorizaciones y solicitudes. No en renglones contables.</div>
+      </div>
+    </div>
+    <div style="border:1px solid #f6d5d2;border-radius:8px;overflow:hidden">
+      <div style="padding:12px 18px;background:#fdf5f4;border-bottom:1px solid #f6d5d2;font:600 10.5px 'Geist Mono',monospace;letter-spacing:.06em;color:#C2352B">NO SE ADOPTA</div>
+      <div style="padding:6px 0">
+        <div style="padding:12px 18px;border-bottom:1px solid #f7f1f0;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Saludo de bienvenida a media pantalla.</b> Roba el primer scroll todos los días. La app abre en el trabajo, no en un hola.</div>
+        <div style="padding:12px 18px;border-bottom:1px solid #f7f1f0;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Ilustraciones 3D y degradados de fondo.</b> A las tres semanas son ruido; en impresión, un problema.</div>
+        <div style="padding:12px 18px;border-bottom:1px solid #f7f1f0;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Vidrio y transparencias.</b> Bajan el contraste justo donde hay cifras negativas que no se pueden confundir.</div>
+        <div style="padding:12px 18px;border-bottom:1px solid #f7f1f0;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Tarjeta alrededor de cada tabla.</b> Una tabla de 400 renglones no es una tarjeta: es la mesa completa.</div>
+        <div style="padding:12px 18px;border-bottom:1px solid #f7f1f0;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Radios de 20–28 px en controles.</b> Se ven bien en un hero; en una fila de filtros deforman la retícula. Máximo 6–8 px.</div>
+        <div style="padding:12px 18px;font:400 12.5px/1.6 'Geist',sans-serif;color:#3d4551"><b>Color por tarjeta.</b> El verde lima y el lila de las referencias son marca de esos productos; aquí el color es estado.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background:#fff;padding:34px 60px 36px;border-top:1px solid #e4e6ea">
+  <div style="display:flex;gap:20px;align-items:flex-start;max-width:900px">
+    <div style="flex:none;font:600 10px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.14em;color:#98a0ac;text-transform:uppercase;padding-top:4px">03 · Anatomía</div>
+    <div>
+      <div style="font:600 15px/1.3 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">Las medidas viven en un solo lugar</div>
+      <p style="margin:0;font:400 13px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">Este documento explica <b>por qué</b> el shell es como es. Cuánto mide cada zona, cómo se comporta en cuatro anchos y qué pasa en los seis estados está en <a href="05%20-%20Shell%20y%20estados.dc.html">Doc 5 · Shell y estados</a>; la navegación, en <a href="07%20-%20Navegacion.dc.html">Doc 6</a>. Si un número aparece dos veces, uno de los dos se va a quedar viejo.</p>
+    </div>
+  </div>
+</div>
+<div style="background:#fff;padding:44px 60px 48px">
+  <div style="font:600 10px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.14em;color:#98a0ac;text-transform:uppercase;margin-bottom:8px">04 · Dos densidades</div>
+  <h2 style="margin:0 0 8px;font:600 27px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#0e1116">Modo resumen y modo mesa</h2>
+  <p style="margin:0 0 26px;max-width:700px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">Una sola densidad no sirve para ocho horas. Cada pantalla declara en cuál de las dos vive, y el sistema le da su propio ritmo de aire.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div style="border:1px solid #e4e6ea;border-radius:8px;overflow:hidden">
+      <div style="padding:22px;background:#fbfbfc;border-bottom:1px solid #e4e6ea;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;gap:10px"><div style="flex:1;height:60px;background:#fff;border:1px solid #e4e6ea;border-radius:6px"></div><div style="flex:1;height:60px;background:#fff;border:1px solid #e4e6ea;border-radius:6px"></div><div style="flex:1;height:60px;background:#fff;border:1px solid #e4e6ea;border-radius:6px"></div></div>
+        <div style="display:flex;gap:10px"><div style="flex:2;height:76px;background:#fff;border:1px solid #e4e6ea;border-radius:6px"></div><div style="flex:1;height:76px;background:#fff;border:1px solid #e4e6ea;border-radius:6px"></div></div>
+      </div>
+      <div style="padding:18px 20px">
+        <div style="font:600 15px 'Geist',sans-serif;color:#0e1116;margin-bottom:8px">Modo resumen</div>
+        <div style="font:400 12px/1.65 'Geist',sans-serif;color:#5b6472;margin-bottom:12px">Tablero, bandeja, detalle de un registro. Tarjetas de 1 px de borde, aire de 20–24, radio 6. Se ve en una pantalla sin scroll y se entiende de un vistazo.</div>
+        <div style="font:500 11px/1.8 'Geist Mono',monospace;color:#98a0ac">alto de fila 44 · aire 20–24 · máx 7 bloques</div>
+      </div>
+    </div>
+    <div style="border:1px solid #e4e6ea;border-radius:8px;overflow:hidden">
+      <div style="padding:22px;background:#fbfbfc;border-bottom:1px solid #e4e6ea">
+        <div style="background:#fff;border:1px solid #e4e6ea;border-radius:6px;overflow:hidden">
+          <div style="height:24px;background:#fafbfc;border-bottom:1px solid #e4e6ea"></div>
+          <div style="display:flex;flex-direction:column"><div style="height:22px;border-bottom:1px solid #f4f5f7"></div><div style="height:22px;border-bottom:1px solid #f4f5f7;background:#fafbfc"></div><div style="height:22px;border-bottom:1px solid #f4f5f7"></div><div style="height:22px;border-bottom:1px solid #f4f5f7;background:#fafbfc"></div><div style="height:22px;border-bottom:1px solid #f4f5f7"></div><div style="height:22px;border-bottom:1px solid #0e1116"></div><div style="height:22px;background:#f4faf7"></div></div>
+        </div>
+      </div>
+      <div style="padding:18px 20px">
+        <div style="font:600 15px 'Geist',sans-serif;color:#0e1116;margin-bottom:8px">Modo mesa</div>
+        <div style="font:400 12px/1.65 'Geist',sans-serif;color:#5b6472;margin-bottom:12px">Estados financieros, listados, captura. La tabla toma la mesa completa: encabezado pegado, subtotales con regla gruesa, cifras en mono alineadas a la derecha. El aire vive en los márgenes, no entre filas.</div>
+        <div style="font:500 11px/1.8 'Geist Mono',monospace;color:#98a0ac">alto de fila 34 · sin tarjeta contenedora · encabezado fijo</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="background:#fff;padding:44px 60px 48px">
+  <div style="font:600 10px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.14em;color:#98a0ac;text-transform:uppercase;margin-bottom:8px">05 · Indicadores</div>
+  <h2 style="margin:0 0 8px;font:600 27px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#0e1116">El mismo indicador, tres formas de decirlo</h2>
+  <p style="margin:0 0 12px;max-width:720px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">Tu preocupación es correcta: a un asesor de piso o a un técnico de taller, «−10.3% vs meta» y «+1.4 pp» no le dicen nada — y peor, lo hace sentir evaluado por un lenguaje que no es el suyo. La salida no es tener indicadores distintos por puesto: es <b>un solo dato con tres niveles de lectura</b>. Abajo está el mismo indicador — unidades vendidas, 148 de 165 — en los tres.</p>
+  <p style="margin:0 0 30px;max-width:720px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">El nivel es una propiedad <b>del puesto</b>, no de la app ni de la pantalla: si eres asesor, ves nivel 1 en Ventas, en Talento y en el Hub. Así nadie aprende dos lenguajes.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px">
+    <div style="border:1px solid #e4e6ea;border-radius:8px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="padding:12px 18px;border-bottom:1px solid #e4e6ea;display:flex;align-items:center;gap:8px"><div style="width:20px;height:20px;border-radius:5px;background:#00244d;color:#fff;display:grid;place-items:center;font:600 10px 'Geist Mono',monospace">1</div><div style="font:600 12.5px 'Geist',sans-serif;color:#0e1116">Operativo</div><div style="margin-left:auto;font:400 10.5px 'Geist',sans-serif;color:#98a0ac">asesor · técnico · cajero</div></div>
+      <div style="padding:26px 22px;background:#fbfbfc;flex:1">
+        <div style="border:1px solid #e4e6ea;border-radius:6px;background:#fff;padding:20px">
+          <div style="font:500 12px 'Geist',sans-serif;color:#5b6472;margin-bottom:14px">Tus unidades de agosto</div>
+          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:6px"><span style="font:600 44px/1 'Geist Mono',monospace;letter-spacing:-.035em;color:#0e1116">148</span><span style="font:500 15px 'Geist',sans-serif;color:#98a0ac">de 165</span></div>
+          <div style="font:600 16px/1.3 'Geist',sans-serif;color:#8A5A12;margin-bottom:16px">Te faltan 17</div>
+          <div style="height:10px;background:#eef0f3;border-radius:5px;position:relative;margin-bottom:10px"><div style="position:absolute;left:0;top:0;bottom:0;width:89.7%;background:#B7791F;border-radius:5px"></div><div style="position:absolute;left:100%;top:-4px;bottom:-4px;width:2px;background:#0e1116"></div></div>
+          <div style="display:flex;justify-content:space-between;font:500 11px 'Geist',sans-serif;color:#98a0ac"><span>Quedan 9 días</span><span>Meta 165</span></div>
+          <div style="margin-top:16px;padding-top:14px;border-top:1px solid #f1f3f6;font:400 12px/1.5 'Geist',sans-serif;color:#5b6472">Vas más lento que la semana pasada.</div>
+        </div>
+      </div>
+      <div style="padding:16px 18px;border-top:1px solid #e4e6ea;font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472"><b style="color:#0e1116">Solo unidades enteras y frases.</b> Nada de porcentajes, puntos porcentuales, ni flechas. Como máximo tres indicadores, y el principal del tamaño de un puño.</div>
+    </div>
+
+    <div style="border:1px solid #e4e6ea;border-radius:8px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="padding:12px 18px;border-bottom:1px solid #e4e6ea;display:flex;align-items:center;gap:8px"><div style="width:20px;height:20px;border-radius:5px;background:#00244d;color:#fff;display:grid;place-items:center;font:600 10px 'Geist Mono',monospace">2</div><div style="font:600 12.5px 'Geist',sans-serif;color:#0e1116">Mando</div><div style="margin-left:auto;font:400 10.5px 'Geist',sans-serif;color:#98a0ac">jefe · gerente · coordinador</div></div>
+      <div style="padding:26px 22px;background:#fbfbfc;flex:1;display:flex;flex-direction:column;gap:12px">
+        <div style="border:1px solid #e4e6ea;border-radius:6px;background:#fff;padding:18px 20px">
+          <div style="font:500 11px 'Geist',sans-serif;color:#5b6472">Unidades vendidas</div>
+          <div style="display:flex;align-items:baseline;gap:8px;margin-top:11px"><span style="font:600 34px/1 'Geist Mono',monospace;letter-spacing:-.03em;color:#0e1116">148</span><span style="font:500 12px 'Geist Mono',monospace;color:#a8afba">/ 165</span></div>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:11px"><span style="font:700 12px 'Geist Mono',monospace;color:#C2352B">−10.3%</span><span style="font:400 11px 'Geist',sans-serif;color:#98a0ac">vs meta</span><span style="margin-left:auto;font:600 12px 'Geist Mono',monospace;color:#C2352B">↘</span></div>
+          <div style="height:4px;background:#eef0f3;border-radius:2px;margin-top:12px;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:89.7%;background:#C2352B;border-radius:2px"></div><div style="position:absolute;left:100%;top:-3px;bottom:-3px;width:1px;background:#0e1116"></div></div>
+        </div>
+        <div style="display:flex;gap:12px">
+          <div style="flex:1;border:1px solid #e4e6ea;border-radius:6px;background:#fff;padding:14px 16px"><div style="font:500 10.5px 'Geist',sans-serif;color:#5b6472">Margen/unidad</div><div style="font:600 19px 'Geist Mono',monospace;color:#0e1116;margin-top:7px">22.4k</div><div style="font:600 10.5px 'Geist Mono',monospace;color:#0E8A5F;margin-top:5px">+7.0%</div></div>
+          <div style="flex:1;border:1px solid #e4e6ea;border-radius:6px;background:#fff;padding:14px 16px"><div style="font:500 10.5px 'Geist',sans-serif;color:#5b6472">Días inventario</div><div style="font:600 19px 'Geist Mono',monospace;color:#0e1116;margin-top:7px">41</div><div style="font:600 10.5px 'Geist Mono',monospace;color:#8A5A12;margin-top:5px">+6 d</div></div>
+        </div>
+      </div>
+      <div style="padding:16px 18px;border-top:1px solid #e4e6ea;font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472"><b style="color:#0e1116">Valor · meta · brecha · tendencia.</b> Hasta 4 indicadores juntos, porque el trabajo del puesto es comparar y repartir el esfuerzo.</div>
+    </div>
+
+    <div style="border:1px solid #e4e6ea;border-radius:8px;overflow:hidden;display:flex;flex-direction:column">
+      <div style="padding:12px 18px;border-bottom:1px solid #e4e6ea;display:flex;align-items:center;gap:8px"><div style="width:20px;height:20px;border-radius:5px;background:#00244d;color:#fff;display:grid;place-items:center;font:600 10px 'Geist Mono',monospace">3</div><div style="font:600 12.5px 'Geist',sans-serif;color:#0e1116">Analítico</div><div style="margin-left:auto;font:400 10.5px 'Geist',sans-serif;color:#98a0ac">contraloría · dirección</div></div>
+      <div style="padding:26px 22px;background:#fbfbfc;flex:1">
+        <div style="border:1px solid #e4e6ea;border-radius:6px;background:#fff;overflow:hidden">
+          <div style="display:grid;grid-template-columns:1fr 58px 58px 62px;padding:9px 14px;border-bottom:1px solid #e4e6ea;background:#fafbfc"><div style="font:700 9px 'Geist Mono',monospace;letter-spacing:.08em;color:#98a0ac">INDICADOR</div><div style="font:700 9px 'Geist Mono',monospace;letter-spacing:.08em;color:#98a0ac;text-align:right">REAL</div><div style="font:700 9px 'Geist Mono',monospace;letter-spacing:.08em;color:#98a0ac;text-align:right">META</div><div style="font:700 9px 'Geist Mono',monospace;letter-spacing:.08em;color:#98a0ac;text-align:right">BRECHA</div></div>
+          <div style="display:grid;grid-template-columns:1fr 58px 58px 62px;align-items:center;padding:10px 14px;border-bottom:1px solid #f1f3f6"><div style="font:500 11.5px 'Geist',sans-serif;color:#0e1116">Unidades</div><div style="text-align:right;font:500 11.5px 'Geist Mono',monospace;color:#0e1116">148</div><div style="text-align:right;font:400 11.5px 'Geist Mono',monospace;color:#98a0ac">165</div><div style="text-align:right;font:700 11.5px 'Geist Mono',monospace;color:#C2352B">−10.3%</div></div>
+          <div style="display:grid;grid-template-columns:1fr 58px 58px 62px;align-items:center;padding:10px 14px;border-bottom:1px solid #f1f3f6"><div style="font:500 11.5px 'Geist',sans-serif;color:#0e1116">Margen/unidad</div><div style="text-align:right;font:500 11.5px 'Geist Mono',monospace;color:#0e1116">22.4k</div><div style="text-align:right;font:400 11.5px 'Geist Mono',monospace;color:#98a0ac">21.0k</div><div style="text-align:right;font:700 11.5px 'Geist Mono',monospace;color:#0E8A5F">+7.0%</div></div>
+          <div style="display:grid;grid-template-columns:1fr 58px 58px 62px;align-items:center;padding:10px 14px;border-bottom:1px solid #f1f3f6"><div style="font:500 11.5px 'Geist',sans-serif;color:#0e1116">Días inventario</div><div style="text-align:right;font:500 11.5px 'Geist Mono',monospace;color:#0e1116">41</div><div style="text-align:right;font:400 11.5px 'Geist Mono',monospace;color:#98a0ac">35</div><div style="text-align:right;font:700 11.5px 'Geist Mono',monospace;color:#8A5A12">+6 d</div></div>
+          <div style="display:grid;grid-template-columns:1fr 58px 58px 62px;align-items:center;padding:10px 14px"><div style="font:500 11.5px 'Geist',sans-serif;color:#0e1116">ROS</div><div style="text-align:right;font:500 11.5px 'Geist Mono',monospace;color:#0e1116">4.1%</div><div style="text-align:right;font:400 11.5px 'Geist Mono',monospace;color:#98a0ac">4.5%</div><div style="text-align:right;font:700 11.5px 'Geist Mono',monospace;color:#C2352B">−0.4 pp</div></div>
+          <div style="display:flex;align-items:center;gap:8px;padding:9px 14px;border-top:1px solid #e4e6ea;background:#fafbfc"><div style="font:500 10px 'Geist Mono',monospace;color:#98a0ac">vs año · vs ppto · acum · tendencia</div><div style="margin-left:auto;font:600 10px 'Geist',sans-serif;color:#2F6BFF">+4 columnas</div></div>
+        </div>
+      </div>
+      <div style="padding:16px 18px;border-top:1px solid #e4e6ea;font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472"><b style="color:#0e1116">Rejilla, no tarjetas.</b> Aquí sí caben pp, acumulados, comparativos y fuente citada: el puesto vive de la comparación.</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div style="border:1px solid #e4e6ea;border-radius:8px;overflow:hidden">
+      <div style="padding:13px 18px;border-bottom:1px solid #e4e6ea;font:600 12.5px 'Geist',sans-serif;color:#0e1116">Lo que nunca cambia entre niveles</div>
+      <div style="padding:6px 0">
+        <div style="padding:11px 18px;border-bottom:1px solid #f4f5f7;display:flex;gap:12px"><div style="font:600 10px 'Geist Mono',monospace;color:#2F6BFF;padding-top:3px">A</div><div style="font:400 12px/1.55 'Geist',sans-serif;color:#3d4551"><b>El orden de lectura:</b> nombre → valor → meta → estado. Siempre en ese orden, en las tres formas.</div></div>
+        <div style="padding:11px 18px;border-bottom:1px solid #f4f5f7;display:flex;gap:12px"><div style="font:600 10px 'Geist Mono',monospace;color:#2F6BFF;padding-top:3px">B</div><div style="font:400 12px/1.55 'Geist',sans-serif;color:#3d4551"><b>La meta como marca en la barra.</b> Es la única pieza gráfica que se repite en los tres niveles — y la que se entiende sin saber leer números.</div></div>
+        <div style="padding:11px 18px;border-bottom:1px solid #f4f5f7;display:flex;gap:12px"><div style="font:600 10px 'Geist Mono',monospace;color:#2F6BFF;padding-top:3px">C</div><div style="font:400 12px/1.55 'Geist',sans-serif;color:#3d4551"><b>Los mismos tres colores</b> con el mismo significado, y solo sobre el estado — nunca sobre el valor.</div></div>
+        <div style="padding:11px 18px;display:flex;gap:12px"><div style="font:600 10px 'Geist Mono',monospace;color:#2F6BFF;padding-top:3px">D</div><div style="font:400 12px/1.55 'Geist',sans-serif;color:#3d4551"><b>El mismo dato de origen.</b> Nadie ve un número distinto: el asesor y el director leen el mismo 148, con distinto detalle alrededor.</div></div>
+      </div>
+    </div>
+    <div style="border:1px solid #e4e6ea;border-radius:8px;overflow:hidden">
+      <div style="padding:13px 18px;border-bottom:1px solid #e4e6ea;display:flex;align-items:baseline;gap:10px"><div style="font:600 12.5px 'Geist',sans-serif;color:#0e1116">Cómo se traduce al nivel 1</div><div style="font:400 11px 'Geist',sans-serif;color:#98a0ac">la tabla que evita el «no entiendo»</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr">
+        <div style="padding:9px 18px;border-bottom:1px solid #f4f5f7;font:600 9.5px 'Geist Mono',monospace;letter-spacing:.06em;color:#98a0ac;background:#fafbfc">NIVEL 2–3 DICE</div>
+        <div style="padding:9px 18px;border-bottom:1px solid #f4f5f7;border-left:1px solid #f4f5f7;font:600 9.5px 'Geist Mono',monospace;letter-spacing:.06em;color:#98a0ac;background:#fafbfc">NIVEL 1 DICE</div>
+        <div style="padding:10px 18px;border-bottom:1px solid #f4f5f7;font:400 11.5px 'Geist Mono',monospace;color:#5b6472">−10.3% vs meta</div>
+        <div style="padding:10px 18px;border-bottom:1px solid #f4f5f7;border-left:1px solid #f4f5f7;font:500 11.5px 'Geist',sans-serif;color:#0e1116">Te faltan 17</div>
+        <div style="padding:10px 18px;border-bottom:1px solid #f4f5f7;font:400 11.5px 'Geist Mono',monospace;color:#5b6472">+1.4 pp</div>
+        <div style="padding:10px 18px;border-bottom:1px solid #f4f5f7;border-left:1px solid #f4f5f7;font:500 11.5px 'Geist',sans-serif;color:#0e1116">1 de cada 100 más</div>
+        <div style="padding:10px 18px;border-bottom:1px solid #f4f5f7;font:400 11.5px 'Geist Mono',monospace;color:#5b6472">tendencia ↘</div>
+        <div style="padding:10px 18px;border-bottom:1px solid #f4f5f7;border-left:1px solid #f4f5f7;font:500 11.5px 'Geist',sans-serif;color:#0e1116">Más lento que la semana pasada</div>
+        <div style="padding:10px 18px;border-bottom:1px solid #f4f5f7;font:400 11.5px 'Geist Mono',monospace;color:#5b6472">ROS 4.1%</div>
+        <div style="padding:10px 18px;border-bottom:1px solid #f4f5f7;border-left:1px solid #f4f5f7;font:500 11.5px 'Geist',sans-serif;color:#0e1116">De cada $100, quedan $4</div>
+        <div style="padding:10px 18px;border-bottom:1px solid #f4f5f7;font:400 11.5px 'Geist Mono',monospace;color:#5b6472">avance 89.7%</div>
+        <div style="padding:10px 18px;border-bottom:1px solid #f4f5f7;border-left:1px solid #f4f5f7;font:500 11.5px 'Geist',sans-serif;color:#0e1116">148 de 165</div>
+        <div style="padding:10px 18px;font:400 11.5px 'Geist Mono',monospace;color:#5b6472">fuera de política</div>
+        <div style="padding:10px 18px;border-left:1px solid #f4f5f7;font:500 11.5px 'Geist',sans-serif;color:#0e1116">Necesita autorización</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;border:1px solid #f2e2c2;background:#fdfaf3;border-radius:6px;padding:16px 20px;font:400 12.5px/1.65 'Geist',sans-serif;color:#5b5648"><b style="color:#0e1116">Regla dura:</b> una pantalla presenta un solo nivel. Si un gerente necesita ver a su equipo en nivel 1, ve <i>su</i> tarjeta de nivel 2 y una lista de las de ellos — no una mezcla en la misma rejilla. Y el nivel 1 nunca muestra más de tres indicadores: por encima de eso deja de ser una meta y se vuelve una evaluación.</div>
+</div>
+
+<div style="background:#fff;padding:44px 60px 48px">
+  <div style="font:600 10px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.14em;color:#98a0ac;text-transform:uppercase;margin-bottom:8px">06 · La AI</div>
+  <h2 style="margin:0 0 8px;font:600 27px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#0e1116">Se ve digital porque la máquina trabaja, no porque brille</h2>
+  <p style="margin:0 0 26px;max-width:700px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">Ninguna referencia comunica «AI» con degradados: lo comunica porque algo ya estaba resuelto al abrir (la agenda armada, el resumen escrito, la siguiente etapa sugerida). Ese es el camino — tres formas y ninguna más.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+    <div style="border:1px solid #d5dbf9;border-radius:8px;overflow:hidden">
+      <div style="padding:20px;background:#f7f8ff;border-bottom:1px solid #d5dbf9;display:flex;flex-direction:column;gap:9px;min-height:112px">
+        <div style="display:flex;align-items:center;gap:7px"><img src="assets/nucleo-solido-azul.svg" alt="" style="width:15px;height:15px;display:block"><div style="font:600 10px 'Geist Mono',monospace;letter-spacing:.05em;color:#2F6BFF">LECTURA</div></div>
+        <div style="font:400 11.5px/1.55 'Geist',sans-serif;color:#2c3340">La utilidad operativa queda 11.8% bajo presupuesto; el costo explica 8 de los 9 puntos.</div>
+      </div>
+      <div style="padding:16px 18px"><div style="font:600 13px 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">1 · Lectura al abrir</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Un párrafo que ya explica lo que la pantalla muestra, con la fuente citada. Se lee antes que la tabla.</div></div>
+    </div>
+    <div style="border:1px solid #e4e6ea;border-radius:8px;overflow:hidden">
+      <div style="padding:20px;background:#fbfbfc;border-bottom:1px solid #e4e6ea;display:flex;flex-direction:column;gap:8px;min-height:112px;justify-content:center">
+        <div style="display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border:1px solid #2F6BFF;border-radius:5px;background:#fff;font:600 11px 'Geist',sans-serif;color:#2F6BFF;align-self:flex-start"><img src="assets/nucleo-solido-azul.svg" alt="" style="width:13px;height:13px;display:block">Explicar esta brecha</div>
+        <div style="display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border:1px solid #2F6BFF;border-radius:5px;background:#fff;font:600 11px 'Geist',sans-serif;color:#2F6BFF;align-self:flex-start"><img src="assets/nucleo-solido-azul.svg" alt="" style="width:13px;height:13px;display:block">Redactar la nota de junta</div>
+      </div>
+      <div style="padding:16px 18px"><div style="font:600 13px 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">2 · Verbo en contexto</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Acciones asistidas donde está el dato: en el renglón, en la selección, en el filtro. Siempre con el símbolo.</div></div>
+    </div>
+    <div style="border:1px solid #e4e6ea;border-radius:8px;overflow:hidden">
+      <div style="padding:20px;background:#fbfbfc;border-bottom:1px solid #e4e6ea;display:flex;align-items:center;justify-content:center;min-height:112px;gap:12px">
+        <div style="width:120px;height:70px;border:1px solid #e4e6ea;border-radius:5px;background:#fff"></div>
+        <div style="width:52px;height:70px;border:1px solid #d5dbf9;border-radius:5px;background:#f7f8ff;display:flex;flex-direction:column;padding:6px;gap:4px"><div style="height:8px;border-radius:2px;background:#dfe5fb"></div><div style="height:8px;border-radius:2px;background:#dfe5fb"></div><div style="margin-top:auto;height:12px;border-radius:3px;background:#2F6BFF"></div></div>
+      </div>
+      <div style="padding:16px 18px"><div style="font:600 13px 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">3 · Conversación al lado</div><div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">El panel hereda el contexto de la pantalla y responde sin perder la vista. Se colapsa y no estorba.</div></div>
+    </div>
+  </div>
+  <div style="margin-top:16px;border:1px solid #f2e2c2;background:#fdfaf3;border-radius:6px;padding:16px 20px;font:400 12.5px/1.65 'Geist',sans-serif;color:#5b5648"><b style="color:#0e1116">Regla dura:</b> todo lo que escribe la máquina lleva el símbolo Núcleo, cita su fuente y ofrece máximo tres acciones ejecutables. Si no se puede citar, no se publica — en finanzas una cifra sin origen destruye la confianza que el resto del sistema construye.</div>
+</div>
+
+<div style="background:#00244d;padding:44px 60px 54px">
+  <div style="font:600 10px/1 'Geist Mono',ui-monospace,monospace;letter-spacing:.14em;color:#6ba3d8;text-transform:uppercase;margin-bottom:8px">07 · Principios</div>
+  <h2 style="margin:0 0 30px;font:600 27px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#fff">Ocho reglas para decidir sin preguntar</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 44px">
+    <div style="display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)"><div style="font:600 11px 'Geist Mono',monospace;color:#6ba3d8;padding-top:3px">01</div><div><div style="font:600 13.5px 'Geist',sans-serif;color:#fff;margin-bottom:5px">La mesa antes que el cromo</div><div style="font:400 12px/1.6 'Geist',sans-serif;color:#b9cee3">Ante la duda, el píxel es del contenido. Nada permanente además del rail y el encabezado.</div></div></div>
+    <div style="display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)"><div style="font:600 11px 'Geist Mono',monospace;color:#6ba3d8;padding-top:3px">02</div><div><div style="font:600 13.5px 'Geist',sans-serif;color:#fff;margin-bottom:5px">Una pregunta por pantalla</div><div style="font:400 12px/1.6 'Geist',sans-serif;color:#b9cee3">Si no se puede escribir en una línea qué contesta la pantalla, hay dos pantallas mezcladas.</div></div></div>
+    <div style="display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)"><div style="font:600 11px 'Geist Mono',monospace;color:#6ba3d8;padding-top:3px">03</div><div><div style="font:600 13.5px 'Geist',sans-serif;color:#fff;margin-bottom:5px">Abre en el trabajo</div><div style="font:400 12px/1.6 'Geist',sans-serif;color:#b9cee3">Sin saludos ni portadas: lo primero que se ve es el pendiente y la brecha de hoy.</div></div></div>
+    <div style="display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)"><div style="font:600 11px 'Geist Mono',monospace;color:#6ba3d8;padding-top:3px">04</div><div><div style="font:600 13.5px 'Geist',sans-serif;color:#fff;margin-bottom:5px">El color es estado</div><div style="font:400 12px/1.6 'Geist',sans-serif;color:#b9cee3">Navy estructura, azul acción y AI, verde/ámbar/rojo solo desviación. Nada decorativo.</div></div></div>
+    <div style="display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)"><div style="font:600 11px 'Geist Mono',monospace;color:#6ba3d8;padding-top:3px">05</div><div><div style="font:600 13.5px 'Geist',sans-serif;color:#fff;margin-bottom:5px">Toda cifra trae su marco</div><div style="font:400 12px/1.6 'Geist',sans-serif;color:#b9cee3">Valor, meta, brecha y tendencia viajan juntos — dichos en el nivel de lectura del puesto (§05).</div></div></div>
+    <div style="display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)"><div style="font:600 11px 'Geist Mono',monospace;color:#6ba3d8;padding-top:3px">06</div><div><div style="font:600 13.5px 'Geist',sans-serif;color:#fff;margin-bottom:5px">El asistente se posa, no ocupa</div><div style="font:400 12px/1.6 'Geist',sans-serif;color:#b9cee3">Siempre a un clic, siempre colapsable, nunca una pantalla propia.</div></div></div>
+    <div style="display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)"><div style="font:600 11px 'Geist Mono',monospace;color:#6ba3d8;padding-top:3px">07</div><div><div style="font:600 13.5px 'Geist',sans-serif;color:#fff;margin-bottom:5px">Cómodo a las seis de la tarde</div><div style="font:400 12px/1.6 'Geist',sans-serif;color:#b9cee3">Contraste alto, tipos ≥ 11 px, blancos sin brillo, tema oscuro real. Sin animación que no informe.</div></div></div>
+    <div style="display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12)"><div style="font:600 11px 'Geist Mono',monospace;color:#6ba3d8;padding-top:3px">08</div><div><div style="font:600 13.5px 'Geist',sans-serif;color:#fff;margin-bottom:5px">Ocho apps, un producto</div><div style="font:400 12px/1.6 'Geist',sans-serif;color:#b9cee3">Mismo rail, mismo encabezado, mismos componentes. Cambiar de app se siente cambiar de pestaña.</div></div></div>
+  </div>
+  <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+    <div style="font:400 12.5px/1.6 'Geist',sans-serif;color:#b9cee3;flex:1;min-width:340px;text-wrap:pretty">Con esto cerrado, el siguiente paso es una sola pantalla construida bajo el concepto — propongo el <b style="color:#fff">E.R. ejecutivo de Finanzas en modo mesa</b>, que es el caso más duro: si funciona ahí, funciona en las ocho apps.</div>
+  </div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1340,&quot;height&quot;:1000}}"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --background: oklch(0.937 0.006 84);
+  --foreground: oklch(0.177 0.011 258);
+  --card: oklch(0.950 0.004 84);
+  --card-foreground: oklch(0.177 0.011 258);
+  --popover: oklch(0.950 0.004 84);
+  --popover-foreground: oklch(0.177 0.011 258);
+  --primary: oklch(0.580 0.229 264);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.900 0.005 84);
+  --secondary-foreground: oklch(0.177 0.011 258);
+  --muted: oklch(0.900 0.005 84);
+  --muted-foreground: oklch(0.510 0.006 258);
+  --accent: oklch(0.900 0.005 84);
+  --accent-foreground: oklch(0.177 0.011 258);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.868 0.006 84);
+  --input: oklch(0.868 0.006 84);
+  --ring: oklch(0.580 0.229 264);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+
+  /* ── Núcleo ADC semantic tokens ── */
+  --nuc-surface:           #FFFFFF;
+  --nuc-surface-sub:       #F4F5F7;
+  --nuc-surface-header:    #FBFBFC;
+  --nuc-surface-hover:     #EEF0F3;
+  --nuc-ink:               #0E1116;
+  --nuc-ink-2:             #5B6472;
+  --nuc-ink-3:             #6B7482;
+  --nuc-ink-4:             #98A0AC;
+  --nuc-ink-5:             #A6ADB8;
+  --nuc-border:            #E4E6EA;
+  --nuc-border-sub:        #EEF0F3;
+  --nuc-border-input:      #D8DCE2;
+  --nuc-border-input-val:  #C8CCD4;
+  --nuc-border-dis:        #E4E6EA;
+  --nuc-alarma-border:     #F6D5D2;
+  --nuc-alarma-bg:         #FDF5F4;
+  /* Fixed — same light/dark */
+  --nuc-rail:              #00244D;
+  --nuc-acc:               #2F6BFF;
+  --nuc-acc-rgb:           47, 107, 255;
+  --nuc-acc-link:          #2F6BFF;
+  --nuc-rojo:              #C2352B;
+  --nuc-rojo-rgb:          194, 53, 43;
+  --nuc-ambar:             #B7791F;
+  --nuc-ambar-txt:         #8A5A12;
+  --nuc-ambar-atencion:    #B7791F;
+  --nuc-verde-txt:         #0B7A53;
+  --nuc-verde-bg:          #0E8A5F;
+  --nuc-mesa:              #F4F5F7;
+
+  --sidebar: oklch(0.264 0.086 255);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.580 0.229 264);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.320 0.070 255);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.210 0.065 255);
+  --sidebar-ring: oklch(0.580 0.229 264);
+}
+
+.dark {
+  --background: oklch(0.145 0.015 258);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.200 0.020 258);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.200 0.020 258);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.580 0.229 264);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.260 0.025 258);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.260 0.025 258);
+  --muted-foreground: oklch(0.700 0.010 258);
+  --accent: oklch(0.260 0.025 258);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.580 0.229 264);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.200 0.025 258);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.580 0.229 264);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.264 0.030 258);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.580 0.229 264);
+
+  /* ── Núcleo ADC dark overrides ── */
+  --nuc-surface:           #101C2B;
+  --nuc-surface-sub:       #0D1826;
+  --nuc-surface-header:    #0D1826;
+  --nuc-surface-hover:     #1A2B3D;
+  --nuc-ink:               #E9EEF4;
+  --nuc-ink-2:             #8B98A8;
+  --nuc-ink-3:             #55677F;
+  --nuc-ink-4:             #6F8098;
+  --nuc-ink-5:             #4A5A6E;
+  --nuc-border:            #1D2836;
+  --nuc-border-sub:        #1A2638;
+  --nuc-border-input:      #24344A;
+  --nuc-border-input-val:  #35475E;
+  --nuc-border-dis:        #1D2836;
+  --nuc-alarma-border:     #3D1F1C;
+  --nuc-alarma-bg:         #2A1618;
+  --nuc-acc:               #4D8DFF;
+  --nuc-acc-rgb:           77, 141, 255;
+  --nuc-acc-link:          #7C8DFF;
+  --nuc-rojo:              #FF8B80;
+  --nuc-rojo-rgb:          255, 139, 128;
+  --nuc-ambar:             #D97706;
+  --nuc-ambar-txt:         #F59E0B;
+  --nuc-ambar-atencion:    #E0A640;
+  --nuc-verde-txt:         #34D399;
+  --nuc-verde-bg:          #34D399;
+  --nuc-mesa:              #070F18;
+}

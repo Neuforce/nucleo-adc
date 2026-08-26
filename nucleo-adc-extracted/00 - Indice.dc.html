@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+html,body{margin:0;background:#f7f7f5;font-family:"Geist",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#00244d;text-decoration:none}
+a:hover{color:#2f6bff}
+</style></helmet>
+
+<div style="max-width:1180px;margin:0 auto;background:#fff">
+
+  <div style="background:#00244d;padding:52px 60px 46px;position:relative;overflow:hidden">
+    <div style="display:flex;align-items:center;gap:11px;margin-bottom:26px">
+      <img src="assets/nucleo-solido-white.svg" alt="" style="width:24px;height:24px;display:block">
+      <div style="font:600 11px/1 'Geist Mono',monospace;letter-spacing:.16em;color:#7f9cc0;text-transform:uppercase">Núcleo ADC · Documentación de diseño</div>
+      <div style="margin-left:auto;font:500 11px 'Geist Mono',monospace;color:#7f9cc0">AGOSTO 2026</div>
+    </div>
+    <h1 style="margin:0 0 18px;max-width:820px;font:600 44px/1.06 'Geist',sans-serif;letter-spacing:-.035em;color:#fff;text-wrap:pretty">Cada decisión, con inteligencia de negocio detrás.</h1>
+    <p style="margin:0 0 8px;max-width:730px;font:300 16px/1.6 'Geist',sans-serif;color:#c9d8e8;text-wrap:pretty">Núcleo es la conciencia operativa de Grupo ADC: un mismo marco —una barra de apps, un menú de pantallas, una mesa de trabajo— dentro del cual viven todas las herramientas del grupo. Quien aprende a usar una, sabe usarlas todas.</p>
+    <p style="margin:0;max-width:730px;font:300 16px/1.6 'Geist',sans-serif;color:#7f9cc0;text-wrap:pretty">Este documento no es un catálogo de pantallas bonitas: es el conjunto de decisiones que hacen que la número doce se diseñe sola.</p>
+
+    <div style="display:flex;gap:34px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14)">
+      <sc-for list="{{ cifras }}" as="c" hint-placeholder-count="4">
+        <div>
+          <div style="font:600 27px/1 'Geist Mono',monospace;letter-spacing:-.02em;color:#fff">{{ c.v }}</div>
+          <div style="font:400 11.5px/1.4 'Geist',sans-serif;color:#7f9cc0;margin-top:5px;max-width:150px">{{ c.q }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:44px 60px 40px;border-bottom:1px solid #e4e6ea">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:6px">
+      <div style="font:600 11px/1 'Geist Mono',monospace;letter-spacing:.14em;color:#6b7482;text-transform:uppercase">Las apps de Núcleo a hoy</div>
+      <div style="margin-left:auto;font:500 11px 'Geist Mono',monospace;color:#98a0ac">8 APPS + CONFIGURACIÓN</div>
+    </div>
+    <h2 style="margin:0 0 10px;font:600 25px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#0e1116">Ocho hoy, y el marco aguanta cuarenta</h2>
+    <p style="margin:0 0 24px;max-width:880px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">El orden en que las ve cada persona no es este: <b>manda su uso</b>. Configuración es la única que siempre va al final. Lo que no cabe en la barra se recoge en un disco <b>+N</b>, nunca en una barra de desplazamiento.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+      <sc-for list="{{ apps }}" as="a" hint-placeholder-count="9">
+        <div style="border:1px solid #e4e6ea;border-radius:8px;padding:15px 17px;display:flex;flex-direction:column;background:{{ a.fondo }}">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:8px">
+            <div style="width:26px;height:26px;border-radius:6px;background:{{ a.chip }};display:grid;place-items:center;flex:none">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="{{ a.trazo }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ a.d }}"></path></svg>
+            </div>
+            <div style="font:600 13.5px 'Geist',sans-serif;color:#0e1116;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ a.n }}</div>
+            <div style="margin-left:auto;flex:none;font:500 10px 'Geist Mono',monospace;letter-spacing:.05em;color:{{ a.estadoInk }}">{{ a.estado }}</div>
+          </div>
+          <div style="font:400 11.5px/1.55 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">{{ a.q }}</div>
+          <div style="margin-top:10px;font:500 10.5px 'Geist Mono',monospace;letter-spacing:.04em;color:#98a0ac">{{ a.quien }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:44px 60px 46px">
+    <div style="font:600 11px/1 'Geist Mono',monospace;letter-spacing:.14em;color:#6b7482;text-transform:uppercase;margin-bottom:6px">Índice · cómo leer esto</div>
+    <h2 style="margin:0 0 10px;font:600 25px/1.15 'Geist',sans-serif;letter-spacing:-.025em;color:#0e1116">Trece documentos en cuatro tramos</h2>
+    <p style="margin:0 0 26px;max-width:880px;font:400 14px/1.65 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">De lo más general a lo más específico, y <b>cada pieza se especifica en un solo documento</b>: los demás la citan con enlace. Si solo vas a leer tres: <b>Concepto</b>, <b>Shell y estados</b> y <b>Navegación</b>. Si vienes de fuera: <b>La web</b>. Si vienes a opinar sobre cómo se siente, abre el <b>prototipo de navegación</b> y úsalo cinco minutos.</p>
+
+    <sc-for list="{{ tramos }}" as="t" hint-placeholder-count="4">
+      <div style="margin-bottom:26px">
+        <div style="display:flex;align-items:baseline;gap:11px;padding-bottom:9px;border-bottom:1px solid #0e1116;margin-bottom:4px">
+          <div style="font:700 12px 'Geist Mono',monospace;color:#00244d">{{ t.num }}</div>
+          <div style="font:600 15px 'Geist',sans-serif;letter-spacing:-.01em;color:#0e1116">{{ t.titulo }}</div>
+          <div style="margin-left:auto;font:400 11.5px 'Geist',sans-serif;color:#6b7482;text-align:right;max-width:400px">{{ t.q }}</div>
+        </div>
+        <sc-for list="{{ t.docs }}" as="d" hint-placeholder-count="3">
+          <a href="{{ d.href }}" style="display:grid;grid-template-columns:54px minmax(0,232px) minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:13px 6px;border-bottom:1px solid #f1f3f6">
+            <span style="font:500 11px 'Geist Mono',monospace;color:#98a0ac">{{ d.n }}</span>
+            <span style="font:600 13.5px 'Geist',sans-serif;color:#0e1116;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ d.t }}</span>
+            <span style="font:400 12px/1.5 'Geist',sans-serif;color:#5b6472;text-wrap:pretty">{{ d.q }}</span>
+            <span style="font:500 10px 'Geist Mono',monospace;letter-spacing:.05em;color:{{ d.tagInk }};border:1px solid {{ d.tagBd }};border-radius:3px;padding:2px 6px;white-space:nowrap">{{ d.tag }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </sc-for>
+
+    <div style="border:1px solid #e4e6ea;border-radius:8px;background:#fbfbfc;padding:18px 20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px">
+      <div>
+        <div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">Lo que ya está decidido</div>
+        <div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Identidad, tipografía, color, el shell de tres zonas, los seis estados, la navegación y la carátula del indicador. Se puede construir sobre esto.</div>
+      </div>
+      <div>
+        <div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">Lo que sigue abierto</div>
+        <div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">El catálogo de reportes por app, las reglas de permisos por puesto y el alcance de Núcleo como asistente. Nada de eso bloquea la primera app.</div>
+      </div>
+      <div>
+        <div style="font:600 12px 'Geist',sans-serif;color:#0e1116;margin-bottom:6px">Cómo comentar</div>
+        <div style="font:400 11.5px/1.6 'Geist',sans-serif;color:#5b6472">Cada documento tiene número en este índice y numera sus propias secciones. Cita las dos cosas —«Doc 8, §12»— y no hay forma de confundirse.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#00244d"/><rect x="34" y="34" width="52" height="7" rx="3" fill="#fff"/><rect x="34" y="49" width="52" height="4" rx="2" fill="#7f9cc0"/><rect x="34" y="59" width="52" height="4" rx="2" fill="#7f9cc0"/><rect x="34" y="69" width="34" height="4" rx="2" fill="#7f9cc0"/><rect x="34" y="79" width="44" height="4" rx="2" fill="#7f9cc0"/></svg></template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1180,&quot;height&quot;:1600}}">
+class Component extends DCLogic {
+  renderVals(){
+    const enc=(f)=>encodeURIComponent(f);
+    const doc=(n,t,q,tag,href)=>({n:'DOC '+n,t,q,tag,href:enc(href),
+      tagInk:tag==='PROTOTIPO'?'#2f6bff':(tag==='DECIDIDO'?'#0b7a53':'#6b7482'),
+      tagBd:tag==='PROTOTIPO'?'#c9d8f7':(tag==='DECIDIDO'?'#cfe8de':'#e4e6ea')});
+
+    return {
+      cifras:[
+        {v:'8',q:'apps en el marco a hoy'},
+        {v:'3',q:'zonas permanentes: rail, menú y mesa'},
+        {v:'13',q:'documentos de diseño'},
+        {v:'1,384',q:'px de mesa en 1440; 1,088 con el menú fijado'}
+      ],
+      apps:[
+        {n:'Finanzas',d:'M12 2v20M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6',q:'Estados financieros, presupuesto, cartera y el paquete de junta.',quien:'DIRECCIÓN · CONTRALORÍA',estado:'EN DISEÑO',estadoInk:'#b7791f',fondo:'#fbfbfc',chip:'#00244d',trazo:'#fff'},
+        {n:'Indicadores',d:'M3 3v18h18M7 15l4-5 3 3 5-7',q:'Metas por puesto y su avance, del grupo a la persona.',quien:'TODO EL GRUPO',estado:'EN DISEÑO',estadoInk:'#b7791f',fondo:'#fbfbfc',chip:'#00244d',trazo:'#fff'},
+        {n:'Servicio',d:'M4 17h16M6 17V9l3-3h6l3 3v8',q:'Órdenes de taller, citas del día y productividad de técnicos.',quien:'POSVENTA',estado:'PREVISTA',estadoInk:'#6b7482',fondo:'#fff',chip:'#eef2fb',trazo:'#00244d'},
+        {n:'Inventario',d:'M3 7h18v12H3zM8 7V5h8v2',q:'Unidades en piso, días de inventario y traspasos entre sucursales.',quien:'VENTAS · DIRECCIÓN',estado:'PREVISTA',estadoInk:'#6b7482',fondo:'#fff',chip:'#eef2fb',trazo:'#00244d'},
+        {n:'Talento',d:'M12 4a4 4 0 110 8 4 4 0 010-8M4 21c0-4 3.6-6 8-6s8 2 8 6',q:'Plantilla, evaluaciones, capacitación y movimientos de personal.',quien:'CAPITAL HUMANO',estado:'PREVISTA',estadoInk:'#6b7482',fondo:'#fff',chip:'#eef2fb',trazo:'#00244d'},
+        {n:'Refacciones',d:'M14 3l-1 4 4-1M6 21l9-9M4 12a8 8 0 0013 6',q:'Existencias, pedidos y rotación del almacén.',quien:'POSVENTA',estado:'PREVISTA',estadoInk:'#6b7482',fondo:'#fff',chip:'#eef2fb',trazo:'#00244d'},
+        {n:'Clientes',d:'M21 15a2 2 0 01-2 2H8l-5 4V5a2 2 0 012-2h14a2 2 0 012 2z',q:'Directorio único y seguimiento de prospectos y posventa.',quien:'VENTAS · POSVENTA',estado:'PREVISTA',estadoInk:'#6b7482',fondo:'#fff',chip:'#eef2fb',trazo:'#00244d'},
+        {n:'Seguros',d:'M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z',q:'Pólizas vigentes, renovaciones y comisiones del ramo.',quien:'F&I',estado:'PREVISTA',estadoInk:'#6b7482',fondo:'#fff',chip:'#eef2fb',trazo:'#00244d'},
+        {n:'Configuración',d:'M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1',q:'Catálogos, usuarios, roles y sucursales. Siempre al final del rail.',quien:'TI · ADMINISTRACIÓN',estado:'TRANSVERSAL',estadoInk:'#6b7482',fondo:'#fff',chip:'#eef2fb',trazo:'#00244d'}
+      ],
+      tramos:[
+        {num:'01',titulo:'Qué es y cómo se ve',q:'Empieza aquí si es tu primer contacto con Núcleo.',docs:[
+          doc('1','Identidad','La marca: logo, navy, tipografía y las reglas de uso.','DECIDIDO','01 - Identidad.dc.html'),
+          doc('2','Concepto de interfaz','Las decisiones que rigen todo, y lo que se descartó. El porqué, no las medidas.','DECIDIDO','02 - Concepto de interfaz.dc.html'),
+          doc('3','Imagen','Una pantalla real, terminada, para ver el resultado de las reglas.','REFERENCIA','03 - Imagen.dc.html')
+        ]},
+        {num:'02',titulo:'El marco de trabajo',q:'Lo idéntico en las ocho apps. Aquí viven las medidas del shell.',docs:[
+          doc('4','Sistema','Color, tipografía, retícula y controles, con sus medidas.','DECIDIDO','04 - Sistema.dc.html'),
+          doc('5','Shell y estados','Las tres zonas, los seis estados, el hub y el menú de usuario.','DECIDIDO','05 - Shell y estados.dc.html'),
+          doc('6','La web','La portada de nucleoadc.ai, la ventana de acceso, el desvío de la raíz y las rutas.','DECIDIDO','06 - La web.dc.html'),
+          doc('7','Navegación','El canon del rail y el menú de pantallas — y al final, el prototipo usable.','PROTOTIPO','07 - Navegacion.dc.html')
+        ]},
+        {num:'03',titulo:'Las piezas que se repiten',q:'Los dos tipos de contenido que aparecen en toda app.',docs:[
+          doc('8','Indicadores','La tarjeta 214 × 132 al detalle, sus cuatro usos, el panel y las clases.','DECIDIDO','08 - Indicadores.dc.html'),
+          doc('9','Formularios','Captura, validación y errores: cómo se pide un dato sin castigar.','DECIDIDO','09 - Formularios.dc.html')
+        ]},
+        {num:'04',titulo:'Reportes y pantallas completas',q:'De las piezas al armado final de cada vista.',docs:[
+          doc('10','Reportes fijos','Los reportes que el grupo ya usa: estructura y jerarquía.','EN CURSO','10 - Reportes fijos.dc.html'),
+          doc('11','Reportes generados','Los que el usuario arma: filtros, columnas y guardado.','EN CURSO','11 - Reportes generados.dc.html'),
+          doc('12','Pantallas','El catálogo de los once tipos de pantalla.','EN CURSO','12 - Pantallas.dc.html'),
+          doc('13','Pantallas a detalle','Las pantallas críticas resueltas al pixel.','EN CURSO','13 - Pantallas a detalle.dc.html')
+        ]}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
