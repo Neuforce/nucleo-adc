@@ -38,6 +38,7 @@ Thumbs.db
 .claude/
 
 # ── Archivos del proyecto ────────────────────────────────────────
+nucleo-adc-extracted/
 Nucleo\ ADC.zip
 Nucleo_ADC.zip
 *.zip
