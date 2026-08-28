@@ -177,5 +177,6 @@ Este repositorio **es el Design System de Núcleo**. La app Next.js es el catál
 
 ## Documentación completa
 
+- `CONSUMING.md` — **Único archivo para quien consume el DS** (setup + PRD). El resto de esta guía es para el asistente.
 - `design.md` — Design System exhaustivo (22 secciones): colores, tipografía, espaciado, shell, componentes, estados, indicadores, alarmas, gráficas, formularios, API, copy.
 - `styles/globals.css` — Variables CSS en oklch para Tailwind.

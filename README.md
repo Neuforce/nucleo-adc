@@ -78,6 +78,7 @@ nucleo-adc/
 │   └── globals.css             # Variables CSS: shadcn + tokens --nuc-*
 │
 ├── skills/                     # Skills del agente de diseño
+│   ├── prd-nucleo-ds/          # PRD / módulo / app nueva (auto)
 │   ├── usability/              # Principios Nielsen, Fitts, Tufte
 │   ├── prototype/              # Renderizado de mocks
 │   ├── data-viz/               # Gráficas y dashboards
@@ -89,6 +90,10 @@ nucleo-adc/
 │   └── dealer.mjs              # Helper de distribución
 │
 ├── nucleo-adc-extracted/       # Documentación de diseño original (HTML)
+├── templates/
+│   └── app-con-ds.code-workspace
+├── CONSUMING.md                # Receta: PRD y apps nuevas contra el DS
+├── rule_to_consume.md          # Rule inyectable (T1–T11 + 13 reglas + PRD)
 ├── CLAUDE.md                   # 13 reglas del DS — ley para todo AI agent
 ├── AGENTS.md                   # Contexto completo para AI agents
 └── design.md                   # Design System exhaustivo (22 secciones)
@@ -184,6 +189,6 @@ El tema oscuro se genera automáticamente vía CSS custom properties. Al activar
 
 ## Design System
 
-Las reglas completas están en [`CLAUDE.md`](./CLAUDE.md) (referencia rápida) y [`design.md`](./design.md) (22 secciones exhaustivas). La documentación interactiva con previews en vivo está en [`/docs`](http://localhost:3000/docs).
+**Ingeniero que consume el DS:** lee solo [`CONSUMING.md`](./CONSUMING.md) (está en la raíz). Ahí está el setup y cómo pedir un PRD.
 
-Para AI agents (Claude Code, Cursor, etc.), leer [`AGENTS.md`](./AGENTS.md) antes de construir cualquier cosa.
+Las 13 reglas: [`CLAUDE.md`](./CLAUDE.md). Spec completa: [`design.md`](./design.md). Catálogo en vivo: [`/docs`](http://localhost:3000/docs) (`npm run dev`). Agentes que **mantienen** este repo: [`AGENTS.md`](./AGENTS.md).

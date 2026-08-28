@@ -1,0 +1,7 @@
+{
+  "folders": [
+    { "name": "app", "path": "." },
+    { "name": "nucleo-adc", "path": "../nucleo-adc" }
+  ],
+  "settings": {}
+}

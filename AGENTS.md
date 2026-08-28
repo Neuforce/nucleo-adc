@@ -6,7 +6,7 @@
 
 ## 1. Qué es este proyecto
 
-Este repositorio **es el Design System de Núcleo**. El entregable es el sistema: tokens, 13 reglas, shell, componentes y los 11 tipos de pantalla. El código que se reutiliza está en `components/`, `styles/globals.css` y `CLAUDE.md`. La spec completa es `design.md`.
+Este repositorio **es el Design System de Núcleo**. El entregable es el sistema: tokens, 13 reglas, shell, componentes y los 11 tipos de pantalla. El código que se reutiliza está en `components/`, `styles/globals.css` y `CLAUDE.md`. La spec completa es `design.md`. Ingenieros que consumen el DS: leer solo [`CONSUMING.md`](./CONSUMING.md).
 
 La app Next.js (App Router) es un **catálogo vivo**, no el producto. Cada ruta demuestra un tipo de pantalla o un componente, con datos de ejemplo. Hub, tablero, reportes y formularios ejercitan el sistema; no son aplicaciones de negocio.
 
@@ -699,6 +699,7 @@ Shell
 
 ## 13. Documentación de referencia
 
+- `CONSUMING.md` — Receta para PRD y apps nuevas: qué leer, mapa T1–T11, plantilla de PRD, prompt del asistente
 - `CLAUDE.md` — Reglas no negociables del DS (este mismo conjunto, fuente de verdad)
 - `design.md` — Design System exhaustivo (22 secciones): colores, tipografía, espaciado, shell, componentes, estados, indicadores, alarmas, gráficas, formularios, API, copy
 - `styles/globals.css` — Variables CSS en oklch para Tailwind
