@@ -1,6 +1,6 @@
 # Núcleo ADC
 
-Sistema de gestión e indicadores para el grupo automotriz **ADC Traxión**. Consolida KPIs operativos, alertas, reportes y acceso a Núcleo AI en una interfaz web diseñada con un Design System propio de 13 reglas no negociables.
+Este repositorio **es el Design System de Núcleo**: tokens, 13 reglas, shell, componentes y 11 tipos de pantalla. La app Next.js es un **catálogo vivo** — Hub, tablero, reportes y formularios son ejemplos que ejercitan el sistema, con datos de muestra, no el producto.
 
 ---
 
@@ -49,16 +49,16 @@ npm start
 
 ```
 nucleo-adc/
-├── app/                        # Rutas (Next.js App Router)
-│   ├── page.tsx                # Hub — T1
-│   ├── indicadores/            # Tablero de indicadores — T2/T3
-│   │   └── tablero-puesto/     # Vista de puesto individual
+├── app/                        # Catálogo vivo (ejemplos de pantalla)
+│   ├── page.tsx                # Ejemplo T1 Hub
+│   ├── indicadores/            # Ejemplo T2/T3 tablero
+│   │   └── tablero-puesto/     # Ejemplo T2 puesto
 │   ├── formularios/            # Catálogo de controles y estados
-│   ├── reportes/               # Reportes fijos F1–F6
-│   │   └── generados/          # Reportes generados por AI (A/B/C)
+│   ├── reportes/               # Catálogo F1–F6
+│   │   └── generados/          # Catálogo reportes IA A/B/C
 │   ├── pantallas/              # Catálogo de los 11 tipos de pantalla
 │   ├── docs/                   # Referencia de ingeniería
-│   └── (public)/               # Login y landing
+│   └── (public)/               # Ejemplo login y landing
 │
 ├── components/
 │   ├── shell/                  # Shell inamovible: Rail, Header, Menú,
@@ -96,17 +96,19 @@ nucleo-adc/
 
 ---
 
-## Rutas principales
+## Rutas del catálogo
 
-| Ruta | Descripción |
+Cada ruta es un ejemplo o un catálogo de componentes. Los datos son de muestra.
+
+| Ruta | Qué demuestra |
 |---|---|
-| [`/`](http://localhost:3000) | Hub — vista principal con indicadores, alertas y Núcleo AI |
-| [`/indicadores`](http://localhost:3000/indicadores) | Tablero de indicadores T2/T3 con los 4 usos |
-| [`/formularios`](http://localhost:3000/formularios) | Catálogo de los 11 controles con sus 8 estados |
-| [`/reportes`](http://localhost:3000/reportes) | Reportes fijos F1–F6 con datos reales |
-| [`/reportes/generados`](http://localhost:3000/reportes/generados) | Reportes generados por AI (tipos A, B, C) |
+| [`/`](http://localhost:3000) | Ejemplo T1 Hub |
+| [`/indicadores`](http://localhost:3000/indicadores) | Ejemplo T2/T3 tablero |
+| [`/formularios`](http://localhost:3000/formularios) | Catálogo de 11 controles y 8 estados |
+| [`/reportes`](http://localhost:3000/reportes) | Catálogo de formatos fijos F1–F6 |
+| [`/reportes/generados`](http://localhost:3000/reportes/generados) | Catálogo de plantillas IA (A, B, C) |
 | [`/pantallas`](http://localhost:3000/pantallas) | Catálogo de los 11 tipos de pantalla T1–T11 |
-| [`/docs`](http://localhost:3000/docs) | Referencia de ingeniería: tokens, componentes, props, ejemplos |
+| [`/docs`](http://localhost:3000/docs) | Referencia de ingeniería: tokens, componentes, props |
 
 ---
 

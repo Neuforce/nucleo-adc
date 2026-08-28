@@ -1,6 +1,7 @@
-# Núcleo ADC
+# Núcleo ADC — Design System
 
-> **Lee esta sección de reglas antes de escribir cualquier línea de código o JSX.**
+> Este repositorio **es el Design System**. La app Next.js es el catálogo vivo (ejemplos de pantalla, no el producto).
+> **Lee estas reglas antes de escribir cualquier línea de código o JSX.**
 > La referencia completa está en `design.md`. Estas reglas son los puntos no negociables.
 
 ---
@@ -122,7 +123,7 @@
 
 ## Proyecto
 
-Aplicación Next.js para **Núcleo ADC** — sistema de gestión e indicadores para el grupo automotriz ADC Traxión.
+Este repositorio **es el Design System de Núcleo**. La app Next.js es el catálogo vivo: cada ruta demuestra un tipo de pantalla o un componente. El código reutilizable está en `components/`, `styles/globals.css` y estas 13 reglas.
 
 ## Stack
 
@@ -153,7 +154,7 @@ Aplicación Next.js para **Núcleo ADC** — sistema de gestión e indicadores p
 
 ## Estructura de componentes
 
-- `components/nucleo-adc/` — Componentes propios del proyecto
+- `components/nucleo-adc/` — Componentes del Design System
 - `components/nucleo-adc/meta.ts` — Constantes del DS (colores, fuentes)
 - `components/ui/` — Componentes base de shadcn/ui
 - `packages/ui` — (futuro) `<TarjetaIndicador/>`, `<AppIcon/>`, `<NucleoLogo/>`

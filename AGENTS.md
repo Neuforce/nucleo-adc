@@ -1,12 +1,14 @@
 # AGENTS.md — Núcleo ADC
 
-> Este archivo es el contexto que Claude Code, Cursor u otro AI debe leer **antes de escribir cualquier línea de código** en este proyecto. Refleja el estado real del repositorio al 25 de agosto de 2026.
+> Este archivo es el contexto que Claude Code, Cursor u otro AI debe leer **antes de escribir cualquier línea de código** en este proyecto. Refleja el estado real del repositorio al 27 de agosto de 2026.
 
 ---
 
 ## 1. Qué es este proyecto
 
-**Núcleo ADC** es el sistema de gestión e indicadores del grupo automotriz ADC Traxión. Es una aplicación Next.js (App Router) que agrupa múltiples apps bajo un shell compartido.
+Este repositorio **es el Design System de Núcleo**. El entregable es el sistema: tokens, 13 reglas, shell, componentes y los 11 tipos de pantalla. El código que se reutiliza está en `components/`, `styles/globals.css` y `CLAUDE.md`. La spec completa es `design.md`.
+
+La app Next.js (App Router) es un **catálogo vivo**, no el producto. Cada ruta demuestra un tipo de pantalla o un componente, con datos de ejemplo. Hub, tablero, reportes y formularios ejercitan el sistema; no son aplicaciones de negocio.
 
 **Stack:**
 - Next.js 16 (App Router) · React 19
@@ -15,35 +17,37 @@
 - Íconos: lucide-react
 - Tema: next-themes (light/dark)
 
-**Apps actuales:**
-- `/` — Hub (T1): feed del día, cinta de indicadores
-- `/indicadores` — Tablero (T2/T3): indicadores del puesto
-- `/indicadores/tablero-puesto` — Tablero de puesto (T2): 6 indicadores, ritmo, composición
-- `/formularios` — Demo de 11 controles y 8 estados
-- `/reportes` — Demo de 6 formatos de reporte fijo (F1–F6)
-- `/reportes/generados` — Demo de 3 plantillas de reporte IA (A/B/C)
+**Rutas del catálogo (ejemplos):**
+- `/` — Ejemplo T1 Hub: feed del día, cinta de indicadores
+- `/indicadores` — Ejemplo T2/T3: tablero de indicadores
+- `/indicadores/tablero-puesto` — Ejemplo T2: 6 indicadores, ritmo, composición
+- `/formularios` — Catálogo de 11 controles y 8 estados
+- `/reportes` — Catálogo de 6 formatos de reporte fijo (F1–F6)
+- `/reportes/generados` — Catálogo de 3 plantillas de reporte IA (A/B/C)
 - `/pantallas` — Catálogo de los 11 tipos de pantalla
-- `/(public)/entrar` — Login
+- `/docs` — Referencia de ingeniería: tokens, componentes, props
+- `/(public)/entrar` — Ejemplo de login
 
 ---
 
 ## 2. Estructura de archivos
 
 ```
-app/
+app/                                ← catálogo vivo (ejemplos, no el producto)
   layout.tsx                        ← Geist fonts, providers, globals
-  page.tsx                          ← Hub (T1)
+  page.tsx                          ← ejemplo T1 Hub
   indicadores/
-    page.tsx                        ← Tablero (T2/T3)
-    tablero-puesto/page.tsx         ← Tablero de puesto (T2)
-  formularios/page.tsx
+    page.tsx                        ← ejemplo T2/T3 tablero
+    tablero-puesto/page.tsx         ← ejemplo T2 puesto
+  formularios/page.tsx              ← catálogo de controles
   reportes/
-    page.tsx
-    generados/page.tsx
-  pantallas/page.tsx
+    page.tsx                        ← catálogo F1–F6
+    generados/page.tsx              ← catálogo reportes IA A/B/C
+  pantallas/page.tsx                ← catálogo T1–T11
+  docs/page.tsx                     ← referencia de ingeniería
   (public)/
     page.tsx
-    entrar/page.tsx                 ← Login
+    entrar/page.tsx                 ← ejemplo login
 
 components/
   shell/
