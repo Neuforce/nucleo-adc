@@ -2,73 +2,65 @@
 
 **Si solo lees un archivo de este repo, es este.**
 
-Este repositorio **es el Design System**. No lo edites. No abras su catálogo (`app/`) como si fuera el producto. Copia la rule y el skill a tu app y trabaja allá.
+Este repositorio **es el Design System**. No lo edites. No abras su catálogo (`app/`) como si fuera el producto.
+
+Las apps instalan el paquete **`@nucleo/adc`**. No hace falta un checkout hermano ni copiar `components/`.
 
 ---
 
 ## Ingeniero: qué hacer
 
-### Una vez (setup)
+### Si tu app ya consume Núcleo
 
-**Código — paquete `@nucleo/adc`.** No copies `components/` a tu app. Instálalo:
+Clona **solo esa app** (p. ej. `neuforce-app-platform`) y corre su `npm install`. El DS entra como dependencia (`@nucleo/adc` en su `package.json`). No clones este repo. No instales el DS a mano.
 
-```bash
-# Local (carpeta hermana)
-npm install ../nucleo-adc
-
-# CI / Vercel (mismo repo en GitHub; token si es privado)
-npm install github:christiansilv4/nucleo-adc
-```
-
-En Next.js añade `transpilePackages: ['@nucleo/adc']`. Imports:
+Imports:
 
 ```ts
 import { Shell } from '@nucleo/adc/shell'
 import { Rail } from '@nucleo/adc/shell/rail'
-import { ErrorPanel } from '@nucleo/adc/shell/estados/error-panel'
 import { Campo } from '@nucleo/adc/ui/campo'
-import type { Indicador } from '@nucleo/adc/indicadores/types'
 ```
+
+### Solo la primera vez (app nueva)
+
+Quien **engancha** Núcleo agrega la dep una vez al `package.json` del front y deja `transpilePackages: ['@nucleo/adc']` en Next:
+
+```bash
+npm install github:Neuforce/nucleo-adc#<sha-o-tag>
+```
+
+Fija un commit o un tag. Repo privado: token de GitHub en CI y Vercel.
 
 Peers: `react` 19, `react-dom` 19, `lucide-react`, `next-themes`.
 
-**Asistente — rule y skill** (sigue siendo carpeta hermana o la ruta que uses):
+Quien desarrolla **este** DS puede instalar desde disco. Eso no es el camino de las apps.
 
-```
-disco/
-  nucleo-adc/     ← este repo (no se abre en Cursor)
-  mi-app/         ← aquí trabajas
-```
+### Asistente (una vez por app, si aún no está)
 
-Crea las carpetas destino si no existen. Luego:
-
-1. **Rule (un archivo, cámbiale el nombre):**  
-   [`rule_to_consume.md`](./rule_to_consume.md) → `mi-app/.cursor/rules/nucleo-ds.mdc`
-2. **Skill (una carpeta, con su `SKILL.md` adentro):**  
-   [`skills/prd-nucleo-ds/`](./skills/prd-nucleo-ds/) → `mi-app/.cursor/skills/prd-nucleo-ds/`  
-   El resultado debe ser `mi-app/.cursor/skills/prd-nucleo-ds/SKILL.md`.
-
-Desde el padre de ambas carpetas:
+Si el repo de trabajo **aún no** tiene rule/skill en `.cursor/`, cópialos desde el paquete que ya trajo `npm install` — no desde un clone de este repo:
 
 ```bash
-mkdir -p mi-app/.cursor/rules mi-app/.cursor/skills
-cp nucleo-adc/rule_to_consume.md mi-app/.cursor/rules/nucleo-ds.mdc
-cp -R nucleo-adc/skills/prd-nucleo-ds mi-app/.cursor/skills/
+mkdir -p .cursor/rules .cursor/skills
+cp node_modules/@nucleo/adc/rule_to_consume.md .cursor/rules/nucleo-ds.mdc
+cp -R node_modules/@nucleo/adc/skills/prd-nucleo-ds .cursor/skills/
 ```
+
+Si ya viajan en el repo de la app, no hay que volver a copiarlos. Next compila sin ellos.
 
 ### Cada PRD
 
-1. Abre **solo** `mi-app` en Cursor.
+1. Abre **solo** la app en Cursor (no este repo).
 2. En el chat pega la spec de negocio y pide el PRD.
 3. Recibes un PRD con pantallas T1–T11, `Shell` y las 13 reglas del DS.
-
-Sin la rule y el skill en `mi-app`, el asistente no usa el Design System.
 
 ---
 
 ## Asistente: el resto de esta guía
 
-Lo de abajo lo usa el skill/la rule. El ingeniero no tiene que leerlo para saber qué copiar.
+Lo de abajo lo usa el skill/la rule. El ingeniero de una app que ya declara `@nucleo/adc` no tiene que leerlo.
+
+`DS_ROOT` = `node_modules/@nucleo/adc` (o el path de la app, p. ej. `apps/web/node_modules/@nucleo/adc`).
 
 ### Qué leer (si hace falta más detalle que la rule)
 
@@ -100,7 +92,7 @@ La frase del usuario elige el tipo, no el módulo. T1–T11:
 | T10 Núcleo | Déjame preguntar. |
 | T11 Config | Cambiar cómo funciona. |
 
-Si no cabe, parar y nombrar el hueco. Alcance típico: T2 + T4 + T5 + T6. Toda pantalla de app en `Shell`. Un primario navy. Errores en el campo. Componentes solo de `components/shell` y `components/nucleo-adc`.
+Si no cabe, parar y nombrar el hueco. Alcance típico: T2 + T4 + T5 + T6. Toda pantalla de app en `Shell`. Un primario navy. Errores en el campo. Imports solo `@nucleo/adc/...`.
 
 ### Las 9 secciones del PRD
 
@@ -108,7 +100,7 @@ Sin la tabla del punto 3, no está listo.
 
 1. Pregunta de la app — una frase.
 2. Cápsula del rail — `id`, nombre, ícono Lucide.
-3. Mapa: pregunta → T# → ruta → componentes → datos.
+3. Mapa: pregunta → T# → ruta → import `@nucleo/adc/...` → datos.
 4. Composición (`AGENTS.md` §9).
 5. Shell — menú, ítem activo.
 6. Seis estados, copy en español.
@@ -125,4 +117,4 @@ Sin la tabla del punto 3, no está listo.
 | Gráficas | [`skills/data-viz`](./skills/data-viz/SKILL.md), `design.md` §13 |
 | Código | `@nucleo/adc` (`Shell`, `ui`, `indicadores`, …), tokens `--nuc-*`, `CLAUDE.md` |
 
-El PRD nombra componentes. El import es `@nucleo/adc/...` (paquete). No copies el catálogo `app/`.
+El PRD nombra componentes. El import es `@nucleo/adc/...`. No copies el catálogo `app/`.
