@@ -5,18 +5,18 @@ alwaysApply: true
 
 # Design System Núcleo — inyección
 
-Este repo consume Núcleo. El DS está en `../nucleo-adc` (`DS_ROOT`).
+Este repo consume Núcleo como paquete **`@nucleo/adc`**. `DS_ROOT` = `node_modules/@nucleo/adc` (o `apps/web/node_modules/@nucleo/adc` si el front es un workspace).
 
 En el **primer paso** de cualquier PRD, módulo nuevo, app nueva o pantalla, leer (Read) en este orden:
 
-1. `../nucleo-adc/CONSUMING.md`
-2. `../nucleo-adc/CLAUDE.md`
-3. `../nucleo-adc/AGENTS.md`
-4. `../nucleo-adc/design.md`
+1. `DS_ROOT/CONSUMING.md`
+2. `DS_ROOT/CLAUDE.md`
+3. `DS_ROOT/AGENTS.md`
+4. `DS_ROOT/design.md`
 
-Si un Read falla, aplicar igual todo lo que sigue en esta rule. El PRD no espera a que el usuario @mencione archivos.
+Si un Read falla, aplicar igual todo lo que sigue en esta rule. El PRD no espera a que el usuario @mencione archivos. No inventar un checkout hermano.
 
-`../nucleo-adc/app/` es catálogo de ejemplos. No es el producto.
+`DS_ROOT/app/` es catálogo de ejemplos. No es el producto.
 
 ---
 
@@ -26,7 +26,7 @@ Nueve secciones. Sin la tabla del punto 3, el PRD no está listo.
 
 1. Pregunta de la app — una frase.
 2. Cápsula del rail — `id`, nombre, ícono Lucide (un glifo, trazo 1.5).
-3. Mapa de pantallas — pregunta del usuario → T# → ruta → componentes de `../nucleo-adc/components/` → datos.
+3. Mapa de pantallas — pregunta del usuario → T# → ruta → imports `@nucleo/adc/...` → datos.
 4. Composición de cada pantalla (abajo).
 5. Shell — grupos del menú, ítem activo. No duplicar rail ni header.
 6. Los 6 estados — copy en español; folio en Geist Mono si hay error.
@@ -74,4 +74,4 @@ Composición: T1 cinta+feed. T2 grid de `TarjetaIndicador`. T4 búsqueda+tabla+f
 12. Cero modales de trabajo. Táctil 44 px. Confirmación destructiva = único modal.
 13. Copy en español, número delante. AI: máximo 3 acciones, con fuente.
 
-Componentes: solo los de `../nucleo-adc/components/shell` y `../nucleo-adc/components/nucleo-adc`.
+Código: solo imports `@nucleo/adc/shell`, `@nucleo/adc/ui`, `@nucleo/adc/indicadores`, etc.

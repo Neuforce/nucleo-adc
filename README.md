@@ -20,7 +20,7 @@ Este repositorio **es el Design System de Núcleo**: tokens, 13 reglas, shell, c
 
 ```bash
 # Clonar
-git clone https://github.com/christiansilv4/nucleo-adc.git
+git clone https://github.com/Neuforce/nucleo-adc.git
 cd nucleo-adc
 
 # Instalar dependencias

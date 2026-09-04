@@ -10,7 +10,13 @@
   "files": [
     "components/shell",
     "components/nucleo-adc",
-    "styles"
+    "styles",
+    "CONSUMING.md",
+    "CLAUDE.md",
+    "AGENTS.md",
+    "design.md",
+    "rule_to_consume.md",
+    "skills"
   ],
   "exports": {
     ".": "./components/shell/index.ts",
