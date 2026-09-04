@@ -6,7 +6,7 @@
 
 ## 1. Qué es este proyecto
 
-Este repositorio **es el Design System de Núcleo**. El entregable es el sistema: tokens, 13 reglas, shell, componentes y los 11 tipos de pantalla. El código que se reutiliza está en `components/`, `styles/globals.css` y `CLAUDE.md`. La spec completa es `design.md`. Ingenieros que consumen el DS: leer solo [`CONSUMING.md`](./CONSUMING.md).
+Este repositorio **es el Design System de Núcleo**. El entregable es el sistema: tokens, 13 reglas, shell, componentes y los 11 tipos de pantalla. El código que se reutiliza está en `components/`, `styles/globals.css` y `CLAUDE.md`. Las apps lo instalan como **`@nucleo/adc`** (ver [`CONSUMING.md`](./CONSUMING.md)). La spec completa es `design.md`.
 
 La app Next.js (App Router) es un **catálogo vivo**, no el producto. Cada ruta demuestra un tipo de pantalla o un componente, con datos de ejemplo. Hub, tablero, reportes y formularios ejercitan el sistema; no son aplicaciones de negocio.
 

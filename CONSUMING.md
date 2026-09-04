@@ -2,7 +2,7 @@
 
 **Si solo lees un archivo de este repo, es este.**
 
-Este repositorio **es el Design System**. No lo edites. No abras su catálogo (`app/`) como si fuera el producto. Copia dos archivos a tu app y trabaja allá.
+Este repositorio **es el Design System**. No lo edites. No abras su catálogo (`app/`) como si fuera el producto. Copia la rule y el skill a tu app y trabaja allá.
 
 ---
 
@@ -10,7 +10,29 @@ Este repositorio **es el Design System**. No lo edites. No abras su catálogo (`
 
 ### Una vez (setup)
 
-En disco, el DS y tu app son carpetas hermanas:
+**Código — paquete `@nucleo/adc`.** No copies `components/` a tu app. Instálalo:
+
+```bash
+# Local (carpeta hermana)
+npm install ../nucleo-adc
+
+# CI / Vercel (mismo repo en GitHub; token si es privado)
+npm install github:christiansilv4/nucleo-adc
+```
+
+En Next.js añade `transpilePackages: ['@nucleo/adc']`. Imports:
+
+```ts
+import { Shell } from '@nucleo/adc/shell'
+import { Rail } from '@nucleo/adc/shell/rail'
+import { ErrorPanel } from '@nucleo/adc/shell/estados/error-panel'
+import { Campo } from '@nucleo/adc/ui/campo'
+import type { Indicador } from '@nucleo/adc/indicadores/types'
+```
+
+Peers: `react` 19, `react-dom` 19, `lucide-react`, `next-themes`.
+
+**Asistente — rule y skill** (sigue siendo carpeta hermana o la ruta que uses):
 
 ```
 disco/
@@ -18,8 +40,21 @@ disco/
   mi-app/         ← aquí trabajas
 ```
 
-1. Copia [`rule_to_consume.md`](./rule_to_consume.md) → `mi-app/.cursor/rules/nucleo-ds.mdc`
-2. Copia [`skills/prd-nucleo-ds/`](./skills/prd-nucleo-ds/) → `mi-app/.cursor/skills/prd-nucleo-ds/`
+Crea las carpetas destino si no existen. Luego:
+
+1. **Rule (un archivo, cámbiale el nombre):**  
+   [`rule_to_consume.md`](./rule_to_consume.md) → `mi-app/.cursor/rules/nucleo-ds.mdc`
+2. **Skill (una carpeta, con su `SKILL.md` adentro):**  
+   [`skills/prd-nucleo-ds/`](./skills/prd-nucleo-ds/) → `mi-app/.cursor/skills/prd-nucleo-ds/`  
+   El resultado debe ser `mi-app/.cursor/skills/prd-nucleo-ds/SKILL.md`.
+
+Desde el padre de ambas carpetas:
+
+```bash
+mkdir -p mi-app/.cursor/rules mi-app/.cursor/skills
+cp nucleo-adc/rule_to_consume.md mi-app/.cursor/rules/nucleo-ds.mdc
+cp -R nucleo-adc/skills/prd-nucleo-ds mi-app/.cursor/skills/
+```
 
 ### Cada PRD
 
@@ -27,7 +62,7 @@ disco/
 2. En el chat pega la spec de negocio y pide el PRD.
 3. Recibes un PRD con pantallas T1–T11, `Shell` y las 13 reglas del DS.
 
-Sin esos dos archivos en `mi-app`, el asistente no usa el Design System.
+Sin la rule y el skill en `mi-app`, el asistente no usa el Design System.
 
 ---
 
@@ -88,6 +123,6 @@ Sin la tabla del punto 3, no está listo.
 | Mock | [`skills/prototype`](./skills/prototype/SKILL.md) |
 | Usabilidad | [`skills/usability`](./skills/usability/SKILL.md) |
 | Gráficas | [`skills/data-viz`](./skills/data-viz/SKILL.md), `design.md` §13 |
-| Código | `Shell` + `components/nucleo-adc`, tokens `--nuc-*`, `CLAUDE.md` |
+| Código | `@nucleo/adc` (`Shell`, `ui`, `indicadores`, …), tokens `--nuc-*`, `CLAUDE.md` |
 
-Hoy no hay paquete npm. `packages/ui` / `packages/shell` son futuro. El PRD no cambia cuando existan: solo cambia el import.
+El PRD nombra componentes. El import es `@nucleo/adc/...` (paquete). No copies el catálogo `app/`.
